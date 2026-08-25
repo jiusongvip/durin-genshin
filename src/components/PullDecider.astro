@@ -1,0 +1,142 @@
+---
+// Pull decision tool. Renders a static default verdict in the initial HTML so crawlers
+// can read it; the inline script upgrades it into an interactive decider.
+const questions = [
+  {
+    id: "teams",
+    text: "Do you run Overload, Burning, or Anemo carry teams?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" },
+    ],
+  },
+  {
+    id: "carry",
+    text: "Do you own Varesa, Clorinde, Venti, or Xiao?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" },
+    ],
+  },
+  {
+    id: "shred",
+    text: "Do you need a Pyro resistance shredder for those teams?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" },
+    ],
+  },
+  {
+    id: "consts",
+    text: "Do you plan to reach C1?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" },
+    ],
+  },
+];
+---
+
+<section id="pull" class="border-b border-stone-800/70 py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
+      Should You Pull for Durin?
+    </h2>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-stone-400">
+      Answer four quick questions to get a verdict for your roster. Durin's White Flame form
+      shreds Pyro and reaction-element RES while applying off-field Pyro, and his Dark Decay
+      form turns him into a Vaporize and Melt carry.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="space-y-6">
+        {questions.map((q) => (
+          <fieldset class="rounded-2xl border border-stone-800 bg-stone-900/40 p-5">
+            <legend class="px-1 text-sm font-semibold text-stone-100">{q.text}</legend>
+            <div class="mt-3 flex gap-3">
+              {q.options.map((o) => (
+                <label
+                  class="flex cursor-pointer items-center gap-2 rounded-full border border-stone-700 px-4 py-2 text-sm text-stone-300 transition-colors has-[:checked]:border-ember-500 has-[:checked]:bg-ember-950 has-[:checked]:text-ember-300"
+                >
+                  <input
+                    type="radio"
+                    name={q.id}
+                    value={o.value}
+                    class="sr-only"
+                  />
+                  {o.label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+      </div>
+
+      <div
+        id="pull-verdict"
+        class="flex flex-col justify-center rounded-2xl border border-stone-800 bg-gradient-to-br from-stone-900 to-stone-950 p-8"
+      >
+        <p id="pull-verdict-label" class="text-2xl font-extrabold tracking-tight text-stone-100">
+          It depends on your roster
+        </p>
+        <p id="pull-verdict-reason" class="mt-4 text-base leading-relaxed text-stone-400">
+          Answer the four questions to see whether Durin's White Flame RES shred or his Dark
+          Decay Vaporize and Melt carry fits your roster.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const verdicts = {
+    pull: {
+      label: "Pull for Durin",
+      reason:
+        "You run teams that directly benefit from his Pyro RES shred. His White Flame form is a strong enabler for Overload, Burning, and Anemo carries, and his Dark Decay form adds a Vaporize and Melt carry option.",
+    },
+    skip: {
+      label: "You can skip Durin",
+      reason:
+        "Your teams do not rely on Pyro resistance shred, so his main value is lower for you. Save your Primogems.",
+    },
+    depends: {
+      label: "It depends on your roster",
+      reason:
+        "Your answers are mixed. Durin's White Flame form shines in Overload, Burning, and Anemo teams that need Pyro RES shred, while his Dark Decay form covers Vaporize and Melt. If your roster matches either, he is worth it; otherwise save your Primogems.",
+    },
+  };
+
+  const labelEl = document.getElementById("pull-verdict-label") as HTMLElement;
+  const reasonEl = document.getElementById("pull-verdict-reason") as HTMLElement;
+  const inputs = document.querySelectorAll('input[type="radio"][name]');
+
+  function currentValue(name: string): string | null {
+    const el = document.querySelector<HTMLInputElement>(
+      `input[name="${name}"]:checked`
+    );
+    return el ? el.value : null;
+  }
+
+  function evaluate() {
+    const teams = currentValue("teams");
+    const carry = currentValue("carry");
+    const shred = currentValue("shred");
+    const consts = currentValue("consts");
+
+    if (teams === null || carry === null || shred === null || consts === null) return "depends";
+
+    if (teams === "yes" && carry === "yes" && shred === "yes") return "pull";
+    if (teams === "no") return "skip";
+    if (teams === "yes" && consts === "yes") return "pull";
+    return "depends";
+  }
+
+  function render() {
+    const verdict = verdicts[evaluate()];
+    labelEl.textContent = verdict.label;
+    reasonEl.textContent = verdict.reason;
+  }
+
+  inputs.forEach((input) => input.addEventListener("change", render));
+</script>

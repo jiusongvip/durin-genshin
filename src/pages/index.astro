@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import QuickSummary from "../components/QuickSummary.astro";
+import PullDecider from "../components/PullDecider.astro";
+import PrimogemCalculator from "../components/PrimogemCalculator.astro";
+import Build from "../components/Build.astro";
+import Compare from "../components/Compare.astro";
+import ProsCons from "../components/ProsCons.astro";
+import Lore from "../components/Lore.astro";
+import Materials from "../components/Materials.astro";
+import FAQ from "../components/FAQ.astro";
+import Author from "../components/Author.astro";
+
+const title = "Durin Genshin Impact: Best Build, Lore & Release Date Guide";
+const description =
+  "Durin in Genshin Impact: Pyro build, best weapons, artifacts, team comps, full lore from Dragonspine dragon to playable character, and 6.2 release date.";
+const canonical = "https://www.durin-genshin.com";
+
+const faqs = [
+  {
+    q: "Who is Durin in Genshin Impact?",
+    a: "Durin is a 5-star Pyro sword character released in Version 6.2. He began as a shadow dragon created by Rhinedottir, was reborn as Mini Durin in Simulanka, and finally became a playable human character in Mondstadt.",
+  },
+  {
+    q: "Is Durin a dragon or a human?",
+    a: "Both, at different points in the story. The original Durin was a dragon, Mini Durin was a fairy-tale dragon in Simulanka, and the playable Durin is a human with dragon horns and wings, made when Albedo merged Mini Durin with the original dragon's remains.",
+  },
+  {
+    q: "When is Durin's release date?",
+    a: "Durin released in Version 6.2 (Luna III) on December 3, 2025, in Phase 1 of the character banner.",
+  },
+  {
+    q: "What element and weapon does Durin use?",
+    a: "Durin is a Pyro (fire) character who wields a sword.",
+  },
+  {
+    q: "Is Durin a 5-star character?",
+    a: "Yes, Durin is a 5-star character.",
+  },
+  {
+    q: "Is Durin worth pulling?",
+    a: "It depends on your roster. If you lack an off-field Pyro unit or want a Vaporize and Melt carry, he is worth pulling. If you already have Bennett and Xiangling built and do not need his two forms, he is a sidegrade rather than a must-pull.",
+  },
+  {
+    q: "What are Durin's two forms?",
+    a: "Durin has two battle stances. His White Flame form (Confirmation of Purity) shreds Pyro and reaction-element RES for Electro, Dendro, Anemo, and Geo teams. His Dark Decay form (Denial of Darkness) raises his own Vaporize and Melt DMG by 40% to play as a reaction carry.",
+  },
+  {
+    q: "How does Durin's stance switch work?",
+    a: "After casting his Elemental Skill, Durin gains the Essential Transmutation effect. Pressing his Skill again enters the White Flame (Confirmation of Purity) state, while using Normal Attacks enters the Dark Decay (Denial of Darkness) state. Each state unlocks a different Elemental Burst.",
+  },
+  {
+    q: "Is Durin a support or a DPS?",
+    a: "Both. His White Flame form is a support that shreds RES for teammates, while his Dark Decay form is a Vaporize and Melt reaction DPS. You pick the form that matches your team.",
+  },
+  {
+    q: "What is Durin's best weapon?",
+    a: "His signature sword Athame Artis is the best. Freedom-Sworn and Primordial Jade Cutter are strong 5-star alternatives, while free-to-play players can use Wolf-Fang from the Battle Pass or Lion's Roar.",
+  },
+  {
+    q: "What are the best artifacts for Durin?",
+    a: "A Day Carved from Rising Winds (4pc) is his best-in-slot set for ATK and CRIT. Noblesse Oblige and Emblem of Severed Fate are good alternatives. Use ATK sands, an ATK or Pyro goblet, and a crit circlet.",
+  },
+  {
+    q: "What are the best team comps for Durin?",
+    a: "Overload teams with an Electro carry like Varesa or Clorinde plus Chevreuse, Burning teams with Dendro, and Anemo carry teams with Venti or Xiao that benefit from his resistance shred.",
+  },
+  {
+    q: "How is Durin related to Albedo?",
+    a: "They are brothers. Both were created by the alchemist Rhinedottir. Albedo gave Durin his human body by transmuting the original dragon's remains.",
+  },
+  {
+    q: "Who created Durin?",
+    a: "The original Durin was created by Rhinedottir, also known as Gold. Mini Durin was created by Andersdotter, a member of the Hexenzirkel.",
+  },
+  {
+    q: "What is Mini Durin?",
+    a: "Mini Durin is a fairy-tale dragon from the world of Simulanka, introduced in Version 4.8. He was freed from his curse and reborn in a small form before merging into the playable Durin.",
+  },
+  {
+    q: "What are Durin's ascension materials?",
+    a: "He needs Agnidus Agate gems, 168 Frostlamp Flowers, Warrant drops from Fatui Oprichniki, and the Cyclic Military Kuuvahki Core world boss drop. His talent books are the Ballad series from the Forsaken Rift domain.",
+  },
+  {
+    q: "How good are Durin's constellations?",
+    a: "He works at C0, but C1 is the best value: it grants Cycle of Enlightenment stacks that buff both his support and carry sides. C2 adds a team-wide 50% Pyro DMG plus elemental DMG bonus, C4 raises burst damage by 40%, and C6 is the capstone.",
+  },
+  {
+    q: "Is Durin better than Xiangling or Bennett?",
+    a: "Not a direct comparison. Xiangling deals off-field Pyro damage, Bennett heals and buffs ATK, and Durin is a two-form unit. His White Flame form shreds resistance for Electro, Dendro, Anemo, and Geo teams, while his Dark Decay form buffs his own Vaporize and Melt damage by 40%.",
+  },
+  {
+    q: "What is Durin's role in a team?",
+    a: "He is a two-form Pyro character. In his White Flame form he is an off-field support who shreds Pyro and reaction-element RES while applying Pyro. In his Dark Decay form he becomes a Vaporize and Melt reaction carry with a 40% bonus to those reactions.",
+  },
+  {
+    q: "Is Durin good at C0?",
+    a: "Yes. He is fully functional at C0 in both forms — as a RES shredder and Pyro applier in White Flame, and a reaction carry in Dark Decay. Constellations, especially C1 and C2, add more team value but are not required.",
+  },
+  {
+    q: "How much Energy Recharge does Durin need?",
+    a: "Very little. Once his Elemental Skill is crowned it provides flat Energy, so you generally need no ER at all. If he is solo Pyro, aim for about 110% to 140%.",
+  },
+  {
+    q: "What is Durin's signature weapon?",
+    a: "Athame Artis. It has high base ATK and Crit Rate, boosts his burst Crit DMG, and grants a Whiteblade ATK buff to himself and a teammate on burst hits.",
+  },
+  {
+    q: "Does Durin need his signature weapon?",
+    a: "No. Primordial Jade Cutter and Mistsplitter Reforged are strong 5-star alternatives, and Wolf-Fang from the Battle Pass is a great 4-star option. His weapon is not mandatory.",
+  },
+  {
+    q: "What is Durin's best F2P build?",
+    a: "Sacrificial Sword or Favonius Sword for the weapon, with a 2pc ATK plus 2pc ATK or ATK plus Pyro DMG artifact combo. Focus on ATK, Crit, and Energy Recharge.",
+  },
+  {
+    q: "What teams does Durin NOT work well in?",
+    a: "His White Flame form's resistance shred excludes Hydro and Cryo, so that form adds little in Vaporize and Melt teams — switch to his Dark Decay form for those reactions. His weakest fit is physical teams, where neither form contributes.",
+  },
+  {
+    q: "How does Durin compare to Kazuha?",
+    a: "Kazuha buffs elemental damage with Viridescent Venerer, while Durin shreds Pyro and reaction-element RES through his own kit. Kazuha is a general buffer; Durin is a Pyro-centric enabler.",
+  },
+  {
+    q: "Is Durin good with Dendro teams?",
+    a: "Yes. His persistent off-field Pyro sustains the Burning reaction, which is valuable in certain Dendro compositions. He is one of the better Pyro enablers for Burning teams.",
+  },
+  {
+    q: "What is Durin's special dish?",
+    a: "His special dish is Cook Apple Stew (Trial Version), a trial version of the Apple Stew recipe. It appears in the cooking menu once you own him.",
+  },
+  {
+    q: "When was Durin first teased?",
+    a: "Durin was teased in the Song of the Welkin Moon: Moonlit Ballad of the Night trailer, which revealed his playable design alongside other Nod-Krai characters before his 6.2 release.",
+  },
+  {
+    q: "Who voices Durin in Genshin Impact?",
+    a: "Durin is voiced by Laurie Kynaston in English, Tao Dian in Chinese, Chiaki Kobayashi in Japanese, and Kim Ji-yul in Korean.",
+  },
+  {
+    q: "What is Durin's birthday?",
+    a: "Durin's birthday is March 14.",
+  },
+  {
+    q: "When is Durin's rerun banner?",
+    a: "Durin's first rerun ran in Version 6.6, starting May 20, 2026. Check the current banner schedule for future reruns.",
+  },
+  {
+    q: "Is Durin F2P friendly?",
+    a: "Yes. At C0 with a 4-star weapon such as Wolf-Fang, Lion's Roar, or Amenoma Kageuchi, both of his forms are fully functional. His signature weapon and constellations are optional upgrades.",
+  },
+];
+---
+
+<Layout title={title} description={description} canonical={canonical} faqs={faqs}>
+  <main>
+    <Hero />
+    <QuickSummary />
+    <PullDecider />
+    <PrimogemCalculator />
+    <Build />
+    <Compare />
+    <ProsCons />
+    <Lore />
+    <Materials />
+    <FAQ faqs={faqs} />
+    <Author />
+  </main>
+</Layout>

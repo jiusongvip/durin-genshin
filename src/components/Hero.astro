@@ -1,0 +1,153 @@
+---
+// Hero: character dossier. Fire-element ambiance via CSS gradients (no fake screenshot,
+// no copyrighted official splash art). Replace the marked slot with a licensed visual later.
+const facts = [
+  { k: "Element", v: "Pyro" },
+  { k: "Weapon", v: "Sword" },
+  { k: "Rarity", v: "5-Star" },
+  { k: "Constellation", v: "Draco Rubedo" },
+  { k: "Region", v: "Mondstadt" },
+  { k: "Affiliation", v: "Hexenzirkel" },
+  { k: "Release", v: "6.2, Dec 3, 2025" },
+  { k: "Rerun", v: "6.6, May 20, 2026" },
+  { k: "Birthday", v: "March 14" },
+];
+const voiceActors = "EN Laurie Kynaston · CN Tao Dian · JP Chiaki Kobayashi · KR Kim Ji-yul";
+---
+
+<section id="top" class="relative overflow-hidden border-b border-stone-800/70">
+  <div
+    class="pointer-events-none absolute inset-0"
+    aria-hidden="true"
+  >
+    <div
+      class="absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full opacity-25 blur-3xl"
+      style="background: radial-gradient(circle, #e2603f 0%, transparent 70%)"
+    ></div>
+    <div
+      class="absolute -left-40 bottom-0 h-[24rem] w-[24rem] rounded-full opacity-10 blur-3xl"
+      style="background: radial-gradient(circle, #f0714e 0%, transparent 70%)"
+    ></div>
+  </div>
+
+  <div class="relative mx-auto grid max-w-6xl gap-12 px-4 pb-12 pt-14 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center md:pb-14 md:pt-16">
+    <div>
+      <h1
+        class="mt-4 text-5xl font-extrabold leading-none tracking-tighter text-stone-50 sm:text-6xl lg:text-7xl"
+      >
+        Durin{" "}
+        <span class="mt-4 block text-xl font-bold leading-tight tracking-tight text-ember-400 sm:text-2xl lg:text-3xl">
+          Genshin Impact Character Guide
+        </span>
+      </h1>
+      <p class="mt-3 text-lg font-medium text-stone-200">
+        The Undying Fire
+      </p>
+      <p class="mt-5 max-w-[36rem] text-base leading-relaxed text-stone-400">
+        Durin is a 5-star Pyro sword user with two battle forms: the White Flame
+        resistance-shred support and the Dark Decay Vaporize/Melt carry — the dragon of
+        Dragonspine reborn as a playable character.
+      </p>
+      <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-ember-700/40 bg-ember-950/30 px-4 py-2 text-sm text-stone-200">
+        <span class="font-semibold text-ember-400">Pull verdict:</span>
+        Worth pulling if you need a two-form Pyro support or a Vaporize/Melt carry — skip if you already run Bennett and Xiangling.
+      </div>
+      <div class="mt-3 flex items-center gap-2 text-sm text-stone-400">
+        <span class="font-semibold text-ember-400">9.6/10</span>
+        community rating · 90 votes
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#build"
+          class="inline-flex items-center rounded-full bg-ember-500 px-6 py-3 text-sm font-semibold text-stone-950 transition-colors hover:bg-ember-400"
+        >
+          Best Build
+        </a>
+        <a
+          href="#pull"
+          class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-stone-200 transition-colors hover:border-ember-500 hover:text-ember-400"
+        >
+          Should you pull?
+        </a>
+      </div>
+      <p class="mt-8 max-w-[34rem] text-sm leading-relaxed text-stone-500">
+        One page. Every answer. No ten tabs, no login wall, no top-up ads.
+      </p>
+    </div>
+
+    <div class="mx-auto w-full max-w-sm">
+      <img
+        src="/hero-visual.webp"
+        alt="Stylized artwork of Durin, a young boy with dragon horns and wings surrounded by orange Pyro flames on a deep navy background"
+        width="600"
+        height="900"
+        class="w-full rounded-2xl border border-stone-800"
+      />
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-4 pb-6 sm:px-6">
+    <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 sm:p-8">
+      <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-5">
+        {facts.map((f) => (
+          <div>
+            <dt class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
+              {f.k}
+            </dt>
+            <dd class="mt-1 text-sm font-semibold text-stone-100">{f.v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-stone-800/70 pt-5">
+        <span class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
+          Voice Actors
+        </span>
+        <span class="text-sm font-semibold text-stone-100">{voiceActors}</span>
+      </div>
+      <div class="mt-6 border-t border-stone-800/70 pt-5">
+        <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
+          Max Stats (Lv. 90)
+        </p>
+        <div class="mt-3 grid grid-cols-4 gap-3 text-center">
+          <div>
+            <p class="text-xs text-stone-500">HP</p>
+            <p class="mt-1 text-sm font-semibold text-stone-100">12,430</p>
+          </div>
+          <div>
+            <p class="text-xs text-stone-500">ATK</p>
+            <p class="mt-1 text-sm font-semibold text-stone-100">347</p>
+          </div>
+          <div>
+            <p class="text-xs text-stone-500">DEF</p>
+            <p class="mt-1 text-sm font-semibold text-stone-100">822</p>
+          </div>
+          <div>
+            <p class="text-xs text-stone-500">CRIT DMG</p>
+            <p class="mt-1 text-sm font-semibold text-stone-100">88.4%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+    <div class="grid grid-cols-2 gap-3 border-t border-stone-800/70 pt-6 sm:grid-cols-4">
+      <div class="flex items-center gap-2 text-sm text-stone-400">
+        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
+        Independent fan guide
+      </div>
+      <div class="flex items-center gap-2 text-sm text-stone-400">
+        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
+        No paywalls or ads
+      </div>
+      <div class="flex items-center gap-2 text-sm text-stone-400">
+        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
+        Official data + community tests
+      </div>
+      <div class="flex items-center gap-2 text-sm text-stone-400">
+        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
+        Updated every version
+      </div>
+    </div>
+  </div>
+</section>

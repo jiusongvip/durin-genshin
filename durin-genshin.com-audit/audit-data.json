@@ -1,0 +1,232 @@
+{
+  "summary": {
+    "health_score": 77,
+    "business_type": "单角色垂直攻略站（Content / Game Guide，单页极致 SEO）",
+    "top_findings": [
+      "站点尚未上线：域名 https://www.durin-genshin.com 不可解析（curl 返回 000），无法被收录",
+      "H1 仅为「Durin」（5 字符），缺少目标关键词 Genshin Impact / Character Guide",
+      "og:image 使用 SVG 格式，主流社交平台抓取器不支持渲染 SVG 分享图",
+      "页面 0 张真实图片（无角色立绘/头像/截图），无 alt 文本，损失图像搜索与停留",
+      "E-E-A-T 作者块为占位符（无真实姓名/头像/练度凭证），无 Person schema 与 author meta"
+    ],
+    "quick_wins": [
+      "H1 改为「Durin – Genshin Impact Character Guide」等含关键词的完整短语",
+      "og.svg 替换为 1200×630 的 PNG/JPG 社交分享图",
+      "meta description 精简至 ≤160 字符",
+      "补 favicon 与品牌资产",
+      "作者块填入真实玩家身份 + Person 结构化数据"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 80,
+      "what_works": [
+        "Astro 静态生成，构建产物干净、无重复内容",
+        "域名统一 www 前缀，trailingSlash=always 符合站内治理规范",
+        "canonical 首页不带尾斜杠，与 sitemap 首页一致（fix-sitemap-home.mjs 生效）",
+        "robots.txt 正确 Allow 全部并引用 sitemap-index.xml",
+        "meta robots=index,follow，lang=en，viewport 完整",
+        "TypeScript 类型注解在 <script> 中被正确剥离，交互脚本无运行时语法错误"
+      ],
+      "findings": [
+        {
+          "title": "站点尚未上线（域名不可解析）",
+          "severity": "Critical",
+          "description": "curl https://www.durin-genshin.com 返回 000，域名未解析或未部署，页面当前无法被 Google 抓取与收录。",
+          "recommendation": "部署到 Cloudflare Pages，配置裸域名 301 跳转到 www，并在 GSC 提交 sitemap-index.xml。"
+        },
+        {
+          "title": "og:image 使用 SVG 格式",
+          "severity": "High",
+          "description": "og:image 指向 https://www.durin-genshin.com/og.svg。Facebook、Twitter/X、LinkedIn、Discord 等社交抓取器普遍不支持 SVG，分享卡片将无图。",
+          "recommendation": "改用 1200×630 的 PNG 或 JPG，并同步 og:image:width/height。"
+        },
+        {
+          "title": "缺少 favicon",
+          "severity": "Low",
+          "description": "head 中未声明 favicon 链接，public 目录仅有 og.svg 与 robots.txt。",
+          "recommendation": "添加 favicon.ico / apple-touch-icon 等品牌资产并声明 link。"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 85,
+      "what_works": [
+        "内容极深：33 条 FAQ、完整 build（武器/圣遗物/配队/技能/命座/被动）、三阶段剧情时间线、材料清单、优劣势、配队伤害提升数据",
+        "信息增益明显：竞品对比表（vs 香菱/班尼特）、命座性价比逐层解析、材料刷取成本、避坑清单",
+        "垂直专一度：只做 Durin 单角色，无付费墙、无广告，差异化明确",
+        "数据已回填核实（专武 Athame Artis、6.6 复刻、霜盏花 168 朵等实测数据）",
+        "H2 数量 10 个，符合「每页至少 2 个 H2」规范"
+      ],
+      "findings": [
+        {
+          "title": "E-E-A-T 作者块为占位符",
+          "severity": "Medium",
+          "description": "作者块显示「Durin Genshin Guide Editorial Team」，无真实姓名、头像、游戏内练度凭证或可核验身份；源码注释也标注「可替换为真实作者」。",
+          "recommendation": "填入真实玩家身份（姓名/头像/游戏内 UID 与练度/数据来源链接），并补充 Person schema。"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 75,
+      "what_works": [
+        "Title（59 字符）「Durin Genshin Impact: Best Build, Lore & Release Date Guide」含核心关键词，长度达标",
+        "H2/H3 层级清晰，导航为锚点内链（#build/#lore/#materials/#faq）",
+        "单页结构覆盖身份+抽取+培养+剧情+材料五大搜索意图"
+      ],
+      "findings": [
+        {
+          "title": "H1 过短，仅为「Durin」",
+          "severity": "High",
+          "description": "H1 只有 5 字符，缺少目标关键词；「Genshin Impact Character Guide」被放在字号极小的 eyebrow <p> 中，H1 信号弱。",
+          "recommendation": "H1 改为「Durin – Genshin Impact Character Guide」等含关键词的完整短语。"
+        },
+        {
+          "title": "meta description 约 173 字符，超 160 推荐值",
+          "severity": "Medium",
+          "description": "当前描述约 173 字符，移动端/桌面端搜索结果可能被截断。",
+          "recommendation": "精简至 150-160 字符，保留 Pyro build、best weapons、lore、release date 等核心词。"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 70,
+      "what_works": [
+        "已输出 WebPage、VideoGame、FAQPage（33 条）、BreadcrumbList、HowTo（5 步）五种 JSON-LD",
+        "FAQ 内容与页面可见文本一致，HowTo 步骤与材料刷取内容一致"
+      ],
+      "findings": [
+        {
+          "title": "BreadcrumbList 仅 1 个 ListItem",
+          "severity": "Medium",
+          "description": "面包屑只有一个节点，Google 要求面包屑至少 2 级才有意义，当前结构基本无效。",
+          "recommendation": "改为首页→角色页两级，或直接移除单节点 BreadcrumbList。"
+        },
+        {
+          "title": "VideoGame 作为 WebPage 的 about 嵌套，非顶层主实体",
+          "severity": "Medium",
+          "description": "建站方案规划 VideoGame 为主实体，但当前仅作为 WebPage.about 内嵌，且缺少 name/url/datePublished/gameItem 等关键属性。",
+          "recommendation": "将 VideoGame 提升为独立顶层 JSON-LD，补全 Genshin Impact 实体属性。"
+        },
+        {
+          "title": "缺少 Person（作者）结构化数据",
+          "severity": "Medium",
+          "description": "无 Person schema、无 author meta，E-E-A-T 实体信号缺失。",
+          "recommendation": "新增 Person JSON-LD（name/url/sameAs）并与 WebPage.author 关联。"
+        },
+        {
+          "title": "FAQPage 33 条 + HowTo 富摘要收益有限",
+          "severity": "Low",
+          "description": "Google 已于 2023.8 停用 FAQ 富摘要、2023.9 停用 HowTo 富摘要（除政府/健康权威站外），保留无害但富摘要收益有限。",
+          "recommendation": "保留用于内容覆盖，勿依赖其产生富摘要。"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 88,
+      "what_works": [
+        "Astro 静态 + 自托管字体（@fontsource-variable/outfit），无第三方渲染阻塞脚本",
+        "页面无大图，仅 2 个小型内联交互脚本，LCP 预估为文本类、应极快",
+        "未接入 gtag，无第三方跟踪脚本开销"
+      ],
+      "findings": [
+        {
+          "title": "无真实图片导致 LCP 元素为纯文本，缺少视觉锚点",
+          "severity": "Low",
+          "description": "性能优异但以牺牲视觉内容为代价，详见 Images 类。",
+          "recommendation": "上线后用 PageSpeed Insights 实测 CWV 作为基准。"
+        },
+        {
+          "title": "未接入 analytics，无法衡量性能与流量",
+          "severity": "Medium",
+          "description": "无 gtag/GA4，上线后无法观测流量、排名与真实 CWV。",
+          "recommendation": "部署后接入 GA4/gtag（需声明全局类型，遵循既有集成规范）。"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 75,
+      "what_works": [
+        "QuickSummary 模块提供 5 条高密度、可直接引用的结论，利于 AI Overview 引用",
+        "robots.txt 未屏蔽 AI 爬虫（GPTBot/PerplexityBot 等默认可抓取）",
+        "FAQ 问答对结构化，适合被抽取为答案片段"
+      ],
+      "findings": [
+        {
+          "title": "缺少 llms.txt 与作者实体",
+          "severity": "Low",
+          "description": "无 llms.txt 引导 AI 爬虫，且无作者实体降低 AI 引用时的可信度。",
+          "recommendation": "上线后补充 llms.txt，并完善 Person 作者实体以增强 citability。"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 40,
+      "what_works": [
+        "og.svg 有 aria-label 与 role=img（仅作占位可访问性标注）"
+      ],
+      "findings": [
+        {
+          "title": "页面 0 张真实图片，无 alt 文本",
+          "severity": "High",
+          "description": "全站无 <img>，角色站用户期待立绘/头像/截图，缺失会降低停留时长与图像搜索机会；Hero 仅用 CSS 渐变占位。",
+          "recommendation": "在版权合规前提下引入官方授权素材或自绘角色视觉，并为每张图补充描述性 alt。"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "部署到 Cloudflare Pages，配置裸域名 301 → www 重定向",
+          "GSC 提交 sitemap-index.xml，验证站点所有权",
+          "上线后跑 PageSpeed Insights 建立 CWV 基准"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "H1 改为「Durin – Genshin Impact Character Guide」等含关键词短语",
+          "og.svg → og.png（1200×630），同步 og:image:width/height",
+          "meta description 精简至 ≤160 字符",
+          "补 favicon 与品牌资产",
+          "在版权合规前提下引入角色视觉图并补 alt"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "E-E-A-T 作者块填真实玩家身份 + Person 结构化数据",
+          "VideoGame 提升为顶层主实体并补全属性",
+          "修复/移除单节点 BreadcrumbList",
+          "Reddit/Hoyolab/Discord 社区外链分发"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "接入 GA4/gtag 观测流量与排名",
+          "每个版本更新实测数据（build/材料/复刻）",
+          "补 llms.txt 提升 AI 可抓取性"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

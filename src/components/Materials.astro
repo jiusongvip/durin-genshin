@@ -1,0 +1,174 @@
+---
+// Materials: verified 6.2 totals plus farming locations, resin cost, and time estimates.
+// All content is in the initial HTML.
+const ascension = [
+  { k: "Pyro gems", v: "Agnidus Agate Sliver x1, Fragment x9, Chunk x9, Gemstone x6", src: "Pyro field bosses, or convert with Dust of Azoth" },
+  { k: "Local specialty", v: "Frostlamp Flower x168", src: "Eye of Kratti, Barrowmoss Barrens, Frostmoon Enclave & Final Night Cemetery (Nod-Krai); respawns every 48 hours" },
+  { k: "Elite drops", v: "Tattered Warrant x18, Immaculate Warrant x30, Frost-Etched Warrant x36", src: "Fatui Oprichniki enemies, or exchange Stardust in the shop" },
+  { k: "World boss", v: "Cyclic Military Kuuvahki Core x46", src: "Super-Heavy Landrover: Mechanized Fortress, Kuuvahki Experimental Design Bureau" },
+  { k: "Mora", v: "420,000", src: "Ley Lines, quests, events" },
+];
+
+const talent = [
+  { k: "Talent books", v: "Teachings of Ballad x9, Guide x63, Philosophies x114", src: "Forsaken Rift domain, Springvale, Mondstadt (Wed/Sat/Sun)" },
+  { k: "Elite drops", v: "Tattered Warrant x18, Immaculate Warrant x66, Frost-Etched Warrant x93", src: "Fatui Oprichniki enemies, or exchange Stardust in the shop" },
+  { k: "Weekly boss", v: "Eroded Sunfire x18", src: "Lord of Eroded Primal Fire (Natlan weekly boss)" },
+  { k: "Crowns", v: "Crown of Insight x3", src: "Limited events and offerings" },
+  { k: "Mora", v: "4,957,500 (all three talents)", src: "Ley Lines, quests, events" },
+];
+
+const farming = [
+  {
+    name: "Frostlamp Flower",
+    cost: "168 needed, 48-hour respawn",
+    detail: "The longest grind. These grow in four Nod-Krai zones — Eye of Kratti, Barrowmoss Barrens, Frostmoon Enclave, and Final Night Cemetery — and gathering a full node takes several real-world days because of the 48-hour respawn timer. Start early or use another player's world.",
+  },
+  {
+    name: "Cyclic Military Kuuvahki Core",
+    cost: "46 needed, ~16-23 boss runs",
+    detail: "Dropped by the Super-Heavy Landrover: Mechanized Fortress boss in the Kuuvahki Experimental Design Bureau. Each run costs 40 Resin and drops two or three cores at higher world levels, so budget roughly 640 to 920 Resin for the full set.",
+  },
+  {
+    name: "Ballad books",
+    cost: "186 books, Wed/Sat/Sun only",
+    detail: "Farmed in the Forsaken Rift domain in Springvale, Mondstadt. Philosophies are the bottleneck at one or two per 20-Resin run, so plan several domain sessions on the days the domain is open.",
+  },
+  {
+    name: "Eroded Sunfire",
+    cost: "18 needed, ~9-18 weeks",
+    detail: "A weekly boss drop from the Lord of Eroded Primal Fire. You get one or two per week at 60 Resin, so triple-crowning takes several weeks unless you use Dream Solvent to convert spares.",
+  },
+];
+
+const pitfalls = [
+  {
+    t: "Frostlamp Flowers are the longest grind",
+    b: "You need 168 of them and they only spawn in Nod-Krai waters with a 48-hour respawn. Start collecting early so the specialty is not your bottleneck.",
+  },
+  {
+    t: "Level his Elemental Burst first",
+    b: "His Burst is his main damage source in both forms, so the priority order is Burst, then Skill, then Normal Attack. His normal attacks are filler.",
+  },
+  {
+    t: "C1 is his best-value constellation",
+    b: "C1 grants Cycle of Enlightenment stacks that buff both his support and carry sides. C2 is the next stop for Pyro-reaction teams.",
+  },
+  {
+    t: "Do not run him outside Hexerei teams for full value",
+    b: "A good chunk of his damage and RES shred is locked behind Hexerei team buffs. He still works elsewhere, but pairs best with another Hexerei member.",
+  },
+];
+
+const ascensionLevels = [
+  { lv: "20→40", gems: "Agate Sliver x1", flower: "Frostlamp x3", drops: "Tattered Warrant x3", boss: "—", mora: "20,000" },
+  { lv: "40→50", gems: "Agate Fragment x3", flower: "Frostlamp x10", drops: "Tattered Warrant x15", boss: "Core x2", mora: "40,000" },
+  { lv: "50→60", gems: "Agate Fragment x6", flower: "Frostlamp x20", drops: "Immaculate Warrant x12", boss: "Core x4", mora: "60,000" },
+  { lv: "60→70", gems: "Agate Chunk x3", flower: "Frostlamp x30", drops: "Immaculate Warrant x18", boss: "Core x8", mora: "80,000" },
+  { lv: "70→80", gems: "Agate Chunk x6", flower: "Frostlamp x45", drops: "Frost-Etched Warrant x12", boss: "Core x12", mora: "100,000" },
+  { lv: "80→90", gems: "Agate Gemstone x6", flower: "Frostlamp x60", drops: "Frost-Etched Warrant x24", boss: "Core x20", mora: "120,000" },
+];
+---
+
+<section id="materials" class="border-b border-stone-800/70 py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
+      Ascension and Talent Materials
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-stone-400">
+      Verified totals for a level 90 Durin with all three talents crowned. Most materials are
+      farmed in Nod-Krai, with talent books coming from the Mondstadt Forsaken Rift domain on
+      Wednesday, Saturday, and Sunday.
+    </p>
+
+    <img
+      src="/materials-section.webp"
+      alt="Glowing amber crystal flowers and orange gemstones arranged on dark stone"
+      width="1280"
+      height="720"
+      loading="lazy"
+      decoding="async"
+      class="mt-8 w-full rounded-2xl border border-stone-800"
+    />
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
+        <h3 class="text-base font-semibold text-stone-100">Ascension (to level 90)</h3>
+        <dl class="mt-4 space-y-4">
+          {ascension.map((a) => (
+            <div class="border-b border-stone-800/60 pb-3 last:border-0 last:pb-0">
+              <dt class="text-sm font-medium text-stone-200">{a.k}</dt>
+              <dd class="mt-1 text-sm text-stone-300">{a.v}</dd>
+              <dd class="mt-1 text-xs text-stone-500">{a.src}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
+        <h3 class="text-base font-semibold text-stone-100">Talent (all three to level 10)</h3>
+        <dl class="mt-4 space-y-4">
+          {talent.map((a) => (
+            <div class="border-b border-stone-800/60 pb-3 last:border-0 last:pb-0">
+              <dt class="text-sm font-medium text-stone-200">{a.k}</dt>
+              <dd class="mt-1 text-sm text-stone-300">{a.v}</dd>
+              <dd class="mt-1 text-xs text-stone-500">{a.src}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="mt-14 text-xl font-bold tracking-tight text-stone-50">Ascension by Level</h3>
+    <div class="mt-5 overflow-x-auto">
+      <table class="w-full min-w-[40rem] border-collapse text-sm">
+        <thead>
+          <tr class="text-left">
+            <th class="py-3 pr-4 font-medium text-stone-500">Level</th>
+            <th class="px-4 py-3 font-medium text-stone-500">Gems</th>
+            <th class="px-4 py-3 font-medium text-stone-500">Flower</th>
+            <th class="px-4 py-3 font-medium text-stone-500">Enemy drops</th>
+            <th class="px-4 py-3 font-medium text-stone-500">Boss</th>
+            <th class="px-4 py-3 font-medium text-stone-500">Mora</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ascensionLevels.map((r, i) => (
+            <tr class={i === ascensionLevels.length - 1 ? "" : "border-b border-stone-800/70"}>
+              <td class="py-3 pr-4 font-mono text-xs text-stone-300">{r.lv}</td>
+              <td class="px-4 py-3 text-stone-300">{r.gems}</td>
+              <td class="px-4 py-3 text-stone-300">{r.flower}</td>
+              <td class="px-4 py-3 text-stone-300">{r.drops}</td>
+              <td class="px-4 py-3 text-stone-300">{r.boss}</td>
+              <td class="px-4 py-3 text-stone-300">{r.mora}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-14 text-xl font-bold tracking-tight text-stone-50">Farming Routes &amp; Costs</h3>
+    <div class="mt-5 grid gap-4 md:grid-cols-2">
+      {farming.map((f) => (
+        <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
+          <div class="flex items-baseline justify-between gap-3">
+            <p class="font-semibold text-stone-100">{f.name}</p>
+            <span class="shrink-0 font-mono text-xs text-ember-400">{f.cost}</span>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-stone-400">{f.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-14">
+      <h3 class="text-xl font-bold tracking-tight text-stone-50">Common Mistakes to Avoid</h3>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        {pitfalls.map((p) => (
+          <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
+            <p class="font-semibold text-stone-100">{p.t}</p>
+            <p class="mt-2 text-sm leading-relaxed text-stone-400">{p.b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

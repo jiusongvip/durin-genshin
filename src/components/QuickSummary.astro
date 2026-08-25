@@ -1,0 +1,46 @@
+---
+// "At a glance" summary block: five dense answers that satisfy the dominant search intents
+// in the first scroll, and are structured for featured-snippet / AI Overview citation.
+const summary = [
+  {
+    q: "Who is Durin?",
+    a: "A 5-star Pyro sword character — the Dragonspine dragon reborn as a playable human in Version 6.2.",
+  },
+  {
+    q: "Is he worth pulling?",
+    a: "Yes if you need a two-form Pyro support or a Vaporize/Melt carry; skip if you already run Bennett and Xiangling.",
+  },
+  {
+    q: "Best weapon",
+    a: "Athame Artis (signature), then Primordial Jade Cutter or Mistsplitter Reforged; Wolf-Fang for F2P.",
+  },
+  {
+    q: "Best teams",
+    a: "White Flame: Overload, Burning, and Anemo carries. Dark Decay: Vaporize and Melt.",
+  },
+  {
+    q: "Key constellation",
+    a: "C1 — grants Cycle of Enlightenment stacks that buff both his support and carry sides.",
+  },
+];
+---
+
+<section id="summary" class="border-b border-stone-800/70 py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
+      Durin at a Glance
+    </h2>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-stone-400">
+      Five answers that cover most of why people search for Durin. Everything below goes deeper.
+    </p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {summary.map((s) => (
+        <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
+          <p class="text-sm font-semibold text-ember-400">{s.q}</p>
+          <p class="mt-2 text-sm leading-relaxed text-stone-300">{s.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit Variable", "Outfit", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-display: "Outfit Variable", "Outfit", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* Durin Pyro accent: fire orange-red, kept below full saturation */
+  --color-ember-300: #f89a7d;
+  --color-ember-400: #f0714e;
+  --color-ember-500: #e2603f;
+  --color-ember-600: #c84a2c;
+  --color-ember-700: #a63a20;
+  --color-ember-950: #2a120b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-stone-950);
+  color: var(--color-stone-200);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-ember-500) 40%, transparent);
+  color: var(--color-stone-50);
+}
+
+/* Prose rhythm for long-form guide content */
+.prose-guide {
+  color: var(--color-stone-300);
+  line-height: 1.75;
+  max-width: 68ch;
+}
+
+.prose-guide h2 {
+  color: var(--color-stone-50);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.prose-guide p {
+  margin-bottom: 1rem;
+}
+
+/* Hairline helpers */
+.hairline-t {
+  border-top: 1px solid color-mix(in srgb, var(--color-stone-500) 18%, transparent);
+}
+
+/* Reduced motion: collapse everything */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

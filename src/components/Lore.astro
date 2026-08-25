@@ -1,0 +1,134 @@
+---
+// Lore section: the three-stage timeline fully expanded with quest and event details, plus a
+// relationship map. All content is in the initial HTML.
+const stages = [
+  {
+    era: "500 years ago",
+    title: "The Dragon of Dragonspine",
+    body: [
+      "The original Durin was a shadow dragon created by Rhinedottir, the alchemist known as Gold, in Khaenri'ah before the Cataclysm. Among her many creations he held the title of Humus, second only to Albedo the Chalk.",
+      "Durin was gentle at heart, but because he perceived the world differently from ordinary beings, he caused destruction without ever meaning to. When he flew to Mondstadt during the Cataclysm, he genuinely wanted to befriend its people and Dvalin, yet his presence brought ruin alongside the Abyss creatures.",
+      "Barbatos and Dvalin fought him down, and his body crashed into Dragonspine. His toxic blood seeped into the mountain, making the region dangerous and forming Wyrmrest Valley, where his heart still beats. Even in death, Durin held no grudge against Dvalin, wishing only that they could have met under kinder circumstances.",
+      "His remains resurfaced in the Version 1.2 event The Chalk Prince and the Dragon, where the cursed sword Festering Desire was found coated in Durin's dust, and again in Version 2.3's Shadows Amidst Snowstorms, where his still-beating heart was central to the plot.",
+    ],
+    relations: ["Created by Rhinedottir (Gold)", "Defeated by Barbatos and Dvalin", "Brother to Albedo"],
+  },
+  {
+    era: "Version 4.8",
+    title: "Mini Durin of Simulanka",
+    body: [
+      "In the fairytale world of Simulanka, built by three Hexenzirkel witches, Andersdotter (M) wrote a new Durin into existence, insisting on giving him the same name as Rhinedottir's poison dragon.",
+      "This Durin was kind, but his huge form and a curse that turned everything he touched into blocks led the residents of Simulanka to fear him as an evil dragon. He missed his mother M, and his longing caused real damage, like stars falling from the sky.",
+      "With the blessing of the Wanderer, the Traveler, Nilou, Navia, and Kirara, he broke free of the curse and was reborn in a small, harmless form. It was the happy ending the original Durin never had, and it convinced the Wanderer that the real Durin could be saved too.",
+    ],
+    relations: ["Created by Andersdotter", "Befriended by the Wanderer"],
+  },
+  {
+    era: "Version 5.6 onward",
+    title: "The Human Durin",
+    body: [
+      "After Simulanka, Albedo discovered that the original Durin's heart in Dragonspine was beating faster, signaling a coming resurrection. To prevent the disaster of a second awakening, Albedo transmuted the original Durin's remains into a human body, using Durin's blood from Dragonspine, the flesh of an immortal monster from Mare Javari, and an embryo left behind by Rhinedottir.",
+      "He merged that body with Mini Durin, fusing their fate and existence into a single being. The result was a human boy with dragon horns and wings, who became a resident of Mondstadt.",
+      "This human Durin is learning to live among people, befriending Klee and occasionally getting scolded by Acting Grand Master Jean. In the quest The Solution of Fate, the Traveler, Albedo, and the Wanderer return to Dragonspine to help Durin reject his original's fate when his weakening will risked letting abyssal energy take over. As of Version 6.2 he is a playable 5-star Pyro sword character.",
+      "His Story Quest is the Draco Rubedo chapter, Act 1: The Magic Known as Storytelling, which explores his new life in Mondstadt after his rebirth.",
+    ],
+    relations: ["Brother to Albedo", "Friend to Klee", "Playable since 6.2"],
+  },
+];
+
+const relationships = [
+  { name: "Rhinedottir (Gold)", note: "The alchemist who created the original Durin in Khaenri'ah." },
+  { name: "Albedo", note: "Durin's brother, also created by Rhinedottir, who gave him a human body." },
+  { name: "Dvalin", note: "Defeated the original dragon alongside Barbatos 500 years ago." },
+  { name: "The Wanderer", note: "Befriended Mini Durin in Simulanka and helped free him from his curse." },
+  { name: "Andersdotter (M)", note: "The Hexenzirkel witch who wrote Mini Durin into the world of Simulanka." },
+  { name: "Klee", note: "Durin's friend in Mondstadt; the two often end up in trouble together." },
+];
+
+const voicelines = [
+  {
+    speaker: "Durin on Albedo",
+    text: "Albedo has shared so many of his experiences with me regarding becoming truly human... Family is the only thing that a human can't choose. I know my family is complicated and highly unusual, but with Albedo as my brother, I'm filled with a sense of peace and belonging.",
+  },
+  {
+    speaker: "Varka on Durin",
+    text: "When I first got reports about Durin's resurgence, my heart skipped a beat. I was about to send a crack team back home to defend Mondstadt... What was once one of the greatest threats to Mondstadt is now one of our most reliable allies. Fate sure is an unpredictable force.",
+  },
+  {
+    speaker: "Nicole on Durin",
+    text: "I've been Anya's fan since the beginning. I cannot wait to see how this final, ever-evolving masterpiece of hers is going to unfold — and I will protect it at all costs.",
+  },
+];
+---
+
+<section id="lore" class="border-b border-stone-800/70 py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
+      Durin's Story: Three Forms, One Name
+    </h2>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-stone-400">
+      Durin has existed in three different forms across Genshin Impact's story. Understanding all
+      three clears up most of the confusion around who he is and why a dragon is now a playable
+      character.
+    </p>
+
+    <img
+      src="/lore-section.webp"
+      alt="Snowy mountain peak with a shadowy dragon silhouette flying under dark clouds"
+      width="1280"
+      height="720"
+      loading="lazy"
+      decoding="async"
+      class="mt-8 w-full rounded-2xl border border-stone-800"
+    />
+
+    <ol class="relative mt-12 space-y-12 border-l border-stone-800 pl-8">
+      {stages.map((s) => (
+        <li class="relative">
+          <span
+            class="absolute -left-[2.35rem] top-1 h-3 w-3 rounded-full bg-ember-500 ring-4 ring-stone-950"
+            aria-hidden="true"
+          ></span>
+          <p class="text-xs font-semibold uppercase tracking-wide text-ember-400">{s.era}</p>
+          <h3 class="mt-2 text-xl font-bold tracking-tight text-stone-100">{s.title}</h3>
+          <div class="mt-3 max-w-3xl space-y-3">
+            {s.body.map((p) => (
+              <p class="text-sm leading-relaxed text-stone-400">{p}</p>
+            ))}
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {s.relations.map((r) => (
+              <span class="rounded-full border border-stone-700 px-3 py-1 text-xs text-stone-400">
+                {r}
+              </span>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-14 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
+      <h3 class="text-base font-semibold text-stone-100">Key relationships</h3>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        {relationships.map((r) => (
+          <div>
+            <p class="text-sm font-medium text-stone-200">{r.name}</p>
+            <p class="mt-1 text-sm leading-relaxed text-stone-500">{r.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
+      <h3 class="text-base font-semibold text-stone-100">In their words</h3>
+      <div class="mt-4 space-y-5">
+        {voicelines.map((v) => (
+          <div class="border-l-2 border-ember-700/50 pl-4">
+            <p class="text-sm font-semibold text-ember-400">{v.speaker}</p>
+            <p class="mt-1 text-sm leading-relaxed text-stone-400">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
