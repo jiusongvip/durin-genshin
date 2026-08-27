@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageTOC from "../components/PageTOC.astro";
 import Hero from "../components/Hero.astro";
 import QuickSummary from "../components/QuickSummary.astro";
 import PullDecider from "../components/PullDecider.astro";
@@ -14,7 +15,7 @@ import Author from "../components/Author.astro";
 
 const title = "Durin Genshin Impact: Best Build, Lore & Release Date Guide";
 const description =
-  "Durin in Genshin Impact: Pyro build, best weapons, artifacts, team comps, full lore from Dragonspine dragon to playable character, and 6.2 release date.";
+  "Durin in Genshin Impact: Pyro build, best weapons, artifacts, teams, full lore from Dragonspine dragon to playable character, 6.2 release date.";
 const canonical = "https://www.durin-genshin.com";
 
 const faqs = [
@@ -40,7 +41,11 @@ const faqs = [
   },
   {
     q: "Is Durin worth pulling?",
-    a: "It depends on your roster. If you lack an off-field Pyro unit or want a Vaporize and Melt carry, he is worth pulling. If you already have Bennett and Xiangling built and do not need his two forms, he is a sidegrade rather than a must-pull.",
+    a: "It depends on your roster. If you lack an off-field Pyro unit or want a Vaporize and Melt carry, he is worth pulling. If you already have Bennett and Xiangling built and do not need his two forms, he is a sidegrade rather than a must-pull. The r/DurinMains community broadly agrees: he fits almost every team, but at C0 he reads as a sidegrade to Mavuika or Furina rather than a unit that transforms your account.",
+  },
+  {
+    q: "What is the community consensus on Durin?",
+    a: "On r/DurinMains and top creator channels (Zy0x, Doro44), the agreement is that Durin is a flexible, universal support who slots into many teams, and his White Flame form is one of the few ways to shred Anemo, Dendro, and Geo RES. His main caveats are that C0 is not account-defining and that his best teams often want another Hexerei member like Nicole or Mona.",
   },
   {
     q: "What are Durin's two forms?",
@@ -60,7 +65,7 @@ const faqs = [
   },
   {
     q: "What are the best artifacts for Durin?",
-    a: "A Day Carved from Rising Winds (4pc) is his best-in-slot set for ATK and CRIT. Noblesse Oblige and Emblem of Severed Fate are good alternatives. Use ATK sands, an ATK or Pyro goblet, and a crit circlet.",
+    a: "A Day Carved From Rising Winds (4pc) is his best-in-slot set for ATK and CRIT. Noblesse Oblige and Emblem of Severed Fate are good alternatives. Use ATK sands, an ATK or Pyro goblet, and a crit circlet.",
   },
   {
     q: "What are the best team comps for Durin?",
@@ -100,7 +105,7 @@ const faqs = [
   },
   {
     q: "How much Energy Recharge does Durin need?",
-    a: "Very little. Once his Elemental Skill is crowned it provides flat Energy, so you generally need no ER at all. If he is solo Pyro, aim for about 110% to 140%.",
+    a: "Very little. With a crowned Skill and two Skill casts per rotation you need 0% ER. Otherwise aim for about 100–150% with one Pyro teammate, or 120–150% as solo Pyro.",
   },
   {
     q: "What is Durin's signature weapon?",
@@ -109,6 +114,14 @@ const faqs = [
   {
     q: "Does Durin need his signature weapon?",
     a: "No. Primordial Jade Cutter and Mistsplitter Reforged are strong 5-star alternatives, and Wolf-Fang from the Battle Pass is a great 4-star option. His weapon is not mandatory.",
+  },
+  {
+    q: "C1 or his signature weapon (R1) — which first?",
+    a: "If you already own a 5-star CRIT sword, C1 is generally the better investment: community testing shows it raises team DPS more than an R1 Athame Artis, and it buffs both his support and carry forms at once. His signature weapon is only slightly ahead of other 5-star CRIT swords.",
+  },
+  {
+    q: "What is the best budget team for Durin?",
+    a: "Three community-tested F2P cores work at C0 with 4-star weapons: Overvape (Durin + Lan Yan or Sucrose + Fischl + Xingqiu), Melt Kaeya (Durin + Kaeya + Sucrose + Bennett), and Burgeon (Durin + Barbara + Fischl + Dendro Traveler).",
   },
   {
     q: "What is Durin's best F2P build?",
@@ -156,15 +169,20 @@ const faqs = [
 <Layout title={title} description={description} canonical={canonical} faqs={faqs}>
   <main>
     <Hero />
-    <QuickSummary />
-    <PullDecider />
-    <PrimogemCalculator />
-    <Build />
-    <Compare />
-    <ProsCons />
-    <Lore />
-    <Materials />
-    <FAQ faqs={faqs} />
-    <Author />
+    <div class="mx-auto max-w-7xl">
+      <PageTOC />
+      <div class="xl:pr-72">
+        <QuickSummary />
+        <PullDecider />
+        <PrimogemCalculator />
+        <Build />
+        <Compare />
+        <ProsCons />
+        <Lore />
+        <Materials />
+        <FAQ faqs={faqs} />
+        <Author />
+      </div>
+    </div>
   </main>
 </Layout>

@@ -45,6 +45,24 @@ const relationships = [
   { name: "Klee", note: "Durin's friend in Mondstadt; the two often end up in trouble together." },
 ];
 
+const officialVideos = [
+  {
+    title: "Character Trailer — Durin: A Story Born for This",
+    url: "https://www.youtube.com/watch?v=MOkyO-PYAGY",
+    note: "The official 6.2 trailer that introduced his playable design.",
+  },
+  {
+    title: "Character Teaser — Durin: A Family Letter",
+    url: "https://www.youtube.com/watch?v=OTnW8G2VsyM",
+    note: "A letter home — his Mondstadt life with Albedo and Klee.",
+  },
+  {
+    title: "Character Anecdote — Every Stroke of the Story",
+    url: "https://www.youtube.com/watch?v=aE5MofefW5c",
+    note: "A later official anecdote following his story after rerun.",
+  },
+];
+
 const voicelines = [
   {
     speaker: "Durin on Albedo",
@@ -61,7 +79,7 @@ const voicelines = [
 ];
 ---
 
-<section id="lore" class="border-b border-stone-800/70 py-16 sm:py-20">
+<section id="lore" class="reveal border-b border-stone-800/70 py-16 sm:py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
       Durin's Story: Three Forms, One Name
@@ -73,8 +91,8 @@ const voicelines = [
     </p>
 
     <img
-      src="/lore-section.webp"
-      alt="Snowy mountain peak with a shadowy dragon silhouette flying under dark clouds"
+      src="/official/teaser-key.webp"
+      alt="Official Genshin Impact key art for Durin's character teaser 'A Family Letter'"
       width="1280"
       height="720"
       loading="lazy"
@@ -129,6 +147,34 @@ const voicelines = [
           </div>
         ))}
       </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
+      <h3 class="text-base font-semibold text-stone-100">Watch the official story</h3>
+      <p class="mt-2 text-sm leading-relaxed text-stone-400">
+        Official media from the Genshin Impact channel — the same story told on-screen. Source:
+        HoYoverse official YouTube.
+      </p>
+      <ul class="mt-4 space-y-3">
+        {officialVideos.map((v) => (
+          <li>
+            <a
+              href={v.url}
+              target="_blank"
+              rel="noopener"
+              class="group flex items-start gap-3"
+            >
+              <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ember-700/50 text-ember-400 transition-colors group-hover:bg-ember-500 group-hover:text-stone-950" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </span>
+              <span>
+                <span class="block text-base font-medium text-stone-200 transition-colors group-hover:text-ember-300">{v.title}</span>
+                <span class="block text-sm text-stone-500">{v.note}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>

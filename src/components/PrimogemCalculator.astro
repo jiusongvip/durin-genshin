@@ -10,7 +10,7 @@ const constellations = [
 ];
 ---
 
-<section id="budget" class="border-b border-stone-800/70 py-16 sm:py-20">
+<section id="budget" class="reveal border-b border-stone-800/70 py-16 sm:py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <h2 class="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl">
       Primogem Budget Calculator
@@ -32,7 +32,7 @@ const constellations = [
             min="0"
             step="160"
             value="0"
-            class="mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-base text-stone-100 outline-none transition-colors focus:border-ember-500"
+            class="mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3.5 text-base text-stone-100 outline-none transition-colors focus:border-ember-500"
           />
         </div>
 
@@ -60,7 +60,7 @@ const constellations = [
           </label>
           <select
             id="const"
-            class="mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-base text-stone-100 outline-none transition-colors focus:border-ember-500"
+            class="mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3.5 text-base text-stone-100 outline-none transition-colors focus:border-ember-500"
           >
             {constellations.map((c) => (
               <option value={c.value}>{c.label}</option>
@@ -68,11 +68,11 @@ const constellations = [
           </select>
         </div>
 
-        <label class="flex cursor-pointer items-center gap-3 text-sm text-stone-300">
+        <label class="flex cursor-pointer items-center gap-3 text-base text-stone-300">
           <input
             id="guaranteed"
             type="checkbox"
-            class="h-4 w-4 accent-ember-500"
+            class="h-5 w-5 accent-ember-500"
           />
           I lost my last 50/50 (guaranteed next 5-star is the featured character)
         </label>

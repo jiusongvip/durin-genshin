@@ -1,0 +1,37 @@
+# Durin Genshin Guide
+
+Durin Genshin Guide is an independent, single-page reference for the character Durin in Genshin Impact (5-star Pyro sword user, released Version 6.2, December 3 2025). The page covers his identity, two battle forms (White Flame support and Dark Decay Vaporize/Melt carry), best build, constellations, lore across three forms (dragon → Mini Durin → playable human), ascension materials, and pull value.
+
+## Key facts
+
+- Durin is a 5-star Pyro sword character from Mondstadt, constellation Draco Rubedo, title "The Undying Fire", birthday March 14.
+- He has two battle stances toggled by his Elemental Skill: Confirmation of Purity (White Flame) shreds Pyro and reaction-element RES; Denial of Darkness (Dark Decay) raises his own Vaporize and Melt DMG by 40%.
+- His best-in-slot weapon is Athame Artis; top artifacts are A Day Carved From Rising Winds (4pc); talent priority is Burst > Skill > Normal Attack.
+- He needs very little Energy Recharge: 0% with a crowned Skill and two casts per rotation, up to 120–150% solo Pyro.
+- C1 is his best-value constellation; C2 and C6 are the largest damage jumps.
+- Lore: the original Durin was a shadow dragon created by Rhinedottir in Khaenri'ah, slain at Dragonspine 500 years ago; Mini Durin was written into Simulanka by Andersdotter; Albedo later gave him a human body.
+- Ascension needs: Agnidus Agate gems, 168 Frostlamp Flowers, Fatui Warrant drops, 46 Cyclic Military Kuuvahki Cores; talent books are Ballad from Forsaken Rift.
+- Durin's English voice actor is Laurie Kynaston; his first rerun ran in Version 6.6 from May 20 2026.
+
+## Content sections
+
+- Hero dossier: element, weapon, rarity, constellation, region, affiliation, release, rerun, birthday, voice actors, max stats.
+- Should You Pull? — interactive verdict tool and Primogem budget calculator.
+- Build — weapons, artifacts, stats, energy recharge, teams (premium and F2P), Hexerei synergy, skills, constellations with damage uplift, passives.
+- Compare — Durin vs Xiangling vs Bennett, plus team damage uplift data.
+- Pros, cons and rotations for both forms.
+- Lore — full timeline of the three Durins and key relationships.
+- Materials — ascension and talent totals, farming routes and common mistakes.
+- FAQ — 35 questions and answers.
+- Trust — editorial team, sources and update notes.
+
+## Sources
+
+- Official character page (Durin, Mondstadt): https://genshin.hoyoverse.com/en/character/mondstadt?char=21
+- Official Character Trailer "Durin: A Story Born for This": https://www.youtube.com/watch?v=MOkyO-PYAGY
+- Official Character Teaser "Durin: A Family Letter": https://www.youtube.com/watch?v=OTnW8G2VsyM
+- Official Character Anecdote "Every Stroke of the Story": https://www.youtube.com/watch?v=aE5MofefW5c
+- r/DurinMains community: https://www.reddit.com/r/DurinMains/
+- KQM Durin Quick Guide: https://keqingmains.com/durin-quickguide/
+- Prydwen.gg usage statistics: https://www.prydwen.gg/genshin-impact/characters/durin
+- Community wiki: https://genshin-impact.fandom.com/wiki/Durin

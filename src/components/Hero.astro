@@ -1,6 +1,4 @@
 ---
-// Hero: character dossier. Fire-element ambiance via CSS gradients (no fake screenshot,
-// no copyrighted official splash art). Replace the marked slot with a licensed visual later.
 const facts = [
   { k: "Element", v: "Pyro" },
   { k: "Weapon", v: "Sword" },
@@ -15,139 +13,197 @@ const facts = [
 const voiceActors = "EN Laurie Kynaston · CN Tao Dian · JP Chiaki Kobayashi · KR Kim Ji-yul";
 ---
 
-<section id="top" class="relative overflow-hidden border-b border-stone-800/70">
-  <div
-    class="pointer-events-none absolute inset-0"
-    aria-hidden="true"
-  >
-    <div
-      class="absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full opacity-25 blur-3xl"
-      style="background: radial-gradient(circle, #e2603f 0%, transparent 70%)"
-    ></div>
-    <div
-      class="absolute -left-40 bottom-0 h-[24rem] w-[24rem] rounded-full opacity-10 blur-3xl"
-      style="background: radial-gradient(circle, #f0714e 0%, transparent 70%)"
-    ></div>
+<section id="top" class="hero-stage">
+  <div class="hero-bg">
+    <img
+      src="/official/durin-wish.webp"
+      alt="Official Genshin Impact splash art of Durin, the 5-star Pyro sword character, with dragon wings and fire"
+      width="1574"
+      height="982"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
   </div>
+  <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
 
-  <div class="relative mx-auto grid max-w-6xl gap-12 px-4 pb-12 pt-14 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center md:pb-14 md:pt-16">
-    <div>
-      <h1
-        class="mt-4 text-5xl font-extrabold leading-none tracking-tighter text-stone-50 sm:text-6xl lg:text-7xl"
-      >
-        Durin{" "}
-        <span class="mt-4 block text-xl font-bold leading-tight tracking-tight text-ember-400 sm:text-2xl lg:text-3xl">
-          Genshin Impact Character Guide
-        </span>
-      </h1>
-      <p class="mt-3 text-lg font-medium text-stone-200">
-        The Undying Fire
-      </p>
-      <p class="mt-5 max-w-[36rem] text-base leading-relaxed text-stone-400">
-        Durin is a 5-star Pyro sword user with two battle forms: the White Flame
-        resistance-shred support and the Dark Decay Vaporize/Melt carry — the dragon of
-        Dragonspine reborn as a playable character.
-      </p>
-      <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-ember-700/40 bg-ember-950/30 px-4 py-2 text-sm text-stone-200">
-        <span class="font-semibold text-ember-400">Pull verdict:</span>
-        Worth pulling if you need a two-form Pyro support or a Vaporize/Melt carry — skip if you already run Bennett and Xiangling.
-      </div>
-      <div class="mt-3 flex items-center gap-2 text-sm text-stone-400">
-        <span class="font-semibold text-ember-400">9.6/10</span>
-        community rating · 90 votes
-      </div>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a
-          href="#build"
-          class="inline-flex items-center rounded-full bg-ember-500 px-6 py-3 text-sm font-semibold text-stone-950 transition-colors hover:bg-ember-400"
-        >
-          Best Build
-        </a>
-        <a
-          href="#pull"
-          class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-stone-200 transition-colors hover:border-ember-500 hover:text-ember-400"
-        >
-          Should you pull?
-        </a>
-      </div>
-      <p class="mt-8 max-w-[34rem] text-sm leading-relaxed text-stone-500">
-        One page. Every answer. No ten tabs, no login wall, no top-up ads.
-      </p>
-    </div>
-
-    <div class="mx-auto w-full max-w-sm">
-      <img
-        src="/hero-visual.webp"
-        alt="Stylized artwork of Durin, a young boy with dragon horns and wings surrounded by orange Pyro flames on a deep navy background"
-        width="600"
-        height="900"
-        class="w-full rounded-2xl border border-stone-800"
-      />
-    </div>
-  </div>
-
-  <div class="relative mx-auto max-w-6xl px-4 pb-6 sm:px-6">
-    <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 sm:p-8">
-      <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-5">
-        {facts.map((f) => (
-          <div>
-            <dt class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
-              {f.k}
-            </dt>
-            <dd class="mt-1 text-sm font-semibold text-stone-100">{f.v}</dd>
-          </div>
-        ))}
-      </dl>
-      <div class="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-stone-800/70 pt-5">
-        <span class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
-          Voice Actors
-        </span>
-        <span class="text-sm font-semibold text-stone-100">{voiceActors}</span>
-      </div>
-      <div class="mt-6 border-t border-stone-800/70 pt-5">
-        <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-stone-500">
-          Max Stats (Lv. 90)
+  <div class="hero-content">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="text-center lg:text-left">
+        <p class="overline">Genshin Impact · Version 6.2 · Updated August 2026</p>
+        <h1 id="hero-title" class="hero-title text-6xl sm:text-7xl lg:text-8xl">
+          <span id="hero-name" class="block">Durin</span>
+          <span class="mt-3 block font-sans text-base font-semibold uppercase tracking-[0.18em] text-ember-300 sm:text-lg">
+            Genshin Impact Character Guide
+          </span>
+        </h1>
+        <p class="hero-sub text-base leading-relaxed md:text-lg">
+          The dragon of Dragonspine reborn as a playable character — a 5-star Pyro sword user with
+          two battle forms. One page. Every answer. No ten tabs, no login wall, no top-up ads.
         </p>
-        <div class="mt-3 grid grid-cols-4 gap-3 text-center">
-          <div>
-            <p class="text-xs text-stone-500">HP</p>
-            <p class="mt-1 text-sm font-semibold text-stone-100">12,430</p>
-          </div>
-          <div>
-            <p class="text-xs text-stone-500">ATK</p>
-            <p class="mt-1 text-sm font-semibold text-stone-100">347</p>
-          </div>
-          <div>
-            <p class="text-xs text-stone-500">DEF</p>
-            <p class="mt-1 text-sm font-semibold text-stone-100">822</p>
-          </div>
-          <div>
-            <p class="text-xs text-stone-500">CRIT DMG</p>
-            <p class="mt-1 text-sm font-semibold text-stone-100">88.4%</p>
-          </div>
+
+        <div class="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
+          <a href="#build" class="btn-ink">Best Build</a>
+          <a href="#pull" class="btn-outline btn-outline-dark">Should you pull?</a>
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-1 lg:justify-start">
+          <a href="https://www.youtube.com/watch?v=MOkyO-PYAGY" target="_blank" rel="noopener" class="watch-link">
+            <span class="watch-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+            Character Demo
+          </a>
+          <a href="https://www.youtube.com/watch?v=OTnW8G2VsyM" target="_blank" rel="noopener" class="watch-link">
+            <span class="watch-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+            Teaser
+          </a>
+          <a href="https://www.youtube.com/watch?v=iJkJXR6pV5U" target="_blank" rel="noopener" class="watch-link">
+            <span class="watch-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+            Story Teaser
+          </a>
+        </div>
+
+        <p class="hero-meta">
+          <span>By the Durin Guide Editorial Team</span>
+          <span aria-hidden="true">·</span>
+          <span>Community rating 9.6 / 10</span>
+          <span aria-hidden="true">·</span>
+          <span>36-question FAQ</span>
+        </p>
+      </div>
+
+      <div class="mx-auto hidden w-full max-w-xs sm:block lg:max-w-sm">
+        <img
+          src="/official/durin-card.webp"
+          alt="Official Durin character card art showing his full design with dragon horns and wings"
+          width="750"
+          height="1800"
+          class="w-full rounded-2xl border border-stone-700/60 shadow-[0_30px_80px_-24px_rgba(0,0,0,0.9)]"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true"></div>
+</section>
+
+<section
+  id="dossier"
+  aria-label="Durin character dossier"
+  class="relative z-10 mx-auto -mt-12 max-w-6xl px-4 sm:px-6"
+>
+  <div class="rounded-2xl border border-stone-800/80 bg-stone-900/75 p-6 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur-md sm:p-8">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-5">
+      {facts.map((f) => (
+        <div>
+            <dt class="overline text-xs">{f.k}</dt>
+          <dd class="mt-1 text-sm font-semibold text-stone-100">{f.v}</dd>
+        </div>
+      ))}
+    </dl>
+    <div class="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-stone-800/70 pt-5">
+      <span class="overline text-xs">Voice Actors</span>
+      <span class="text-sm font-semibold text-stone-100">{voiceActors}</span>
+    </div>
+    <div class="mt-6 border-t border-stone-800/70 pt-5">
+      <p class="overline text-xs">Max Stats (Lv. 90)</p>
+      <div class="mt-3 grid grid-cols-4 gap-3 text-center">
+        <div>
+          <p class="text-xs text-stone-500">HP</p>
+          <p class="mt-1 text-sm font-semibold text-stone-100">12,430</p>
+        </div>
+        <div>
+          <p class="text-xs text-stone-500">ATK</p>
+          <p class="mt-1 text-sm font-semibold text-stone-100">347</p>
+        </div>
+        <div>
+          <p class="text-xs text-stone-500">DEF</p>
+          <p class="mt-1 text-sm font-semibold text-stone-100">822</p>
+        </div>
+        <div>
+          <p class="text-xs text-stone-500">CRIT DMG</p>
+          <p class="mt-1 text-sm font-semibold text-stone-100">88.4%</p>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="relative mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-    <div class="grid grid-cols-2 gap-3 border-t border-stone-800/70 pt-6 sm:grid-cols-4">
-      <div class="flex items-center gap-2 text-sm text-stone-400">
-        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
-        Independent fan guide
-      </div>
-      <div class="flex items-center gap-2 text-sm text-stone-400">
-        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
-        No paywalls or ads
-      </div>
-      <div class="flex items-center gap-2 text-sm text-stone-400">
-        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
-        Official data + community tests
-      </div>
-      <div class="flex items-center gap-2 text-sm text-stone-400">
-        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" aria-hidden="true"></span>
-        Updated every version
-      </div>
-    </div>
-  </div>
 </section>
+
+<script is:inline>
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var nameEl = document.getElementById("hero-name");
+    if (nameEl && !reduce) {
+      var text = nameEl.textContent || "";
+      nameEl.textContent = "";
+      var frag = document.createDocumentFragment();
+      text.split("").forEach(function (ch) {
+        var s = document.createElement("span");
+        s.className = "split-char";
+        s.textContent = ch === " " ? "\u00a0" : ch;
+        frag.appendChild(s);
+      });
+      nameEl.appendChild(frag);
+      var spans = nameEl.querySelectorAll(".split-char");
+      spans.forEach(function (s, i) {
+        s.style.transitionDelay = (0.35 + i * 0.045).toFixed(3) + "s";
+      });
+      requestAnimationFrame(function () {
+        setTimeout(function () {
+          spans.forEach(function (s) { s.classList.add("in"); });
+        }, 80);
+      });
+    }
+
+    var canvas = document.getElementById("hero-particles");
+    if (canvas && !reduce) {
+      var ctx = canvas.getContext("2d");
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w, h, particles = [];
+      var colors = ["rgba(207,119,73,", "rgba(224,143,99,", "rgba(237,174,132,", "rgba(143,194,232,"];
+
+      function resize() {
+        var rect = canvas.parentElement.getBoundingClientRect();
+        w = rect.width; h = rect.height;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        canvas.style.width = w + "px"; canvas.style.height = h + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function spawn(p) {
+        p.x = Math.random() * w;
+        p.y = h + 6;
+        p.r = 0.6 + Math.random() * 2;
+        p.vy = -(0.1 + Math.random() * 0.32);
+        p.vx = (Math.random() - 0.5) * 0.14;
+        p.a = 0.08 + Math.random() * 0.2;
+        p.c = colors[Math.floor(Math.random() * colors.length)];
+        p.tw = Math.random() * Math.PI * 2;
+      }
+      function init() {
+        resize();
+        var count = Math.min(46, Math.floor(w / 30));
+        particles = [];
+        for (var i = 0; i < count; i++) { var p = {}; spawn(p); p.y = Math.random() * h; particles.push(p); }
+      }
+      function frame() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          p.x += p.vx; p.y += p.vy; p.tw += 0.008;
+          p.a = 0.08 + Math.random() * 0.16;
+          if (p.y < -12) spawn(p);
+          if (p.x < -12) p.x = w + 12; if (p.x > w + 12) p.x = -12;
+          ctx.beginPath();
+          ctx.fillStyle = p.c + (p.a * (0.5 + 0.5 * Math.sin(p.tw))).toFixed(3) + ")";
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        requestAnimationFrame(frame);
+      }
+      init();
+      requestAnimationFrame(frame);
+      var onResize;
+      window.addEventListener("resize", function () { clearTimeout(onResize); onResize = setTimeout(init, 200); }, { passive: true });
+    }
+  })();
+</script>
