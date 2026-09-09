@@ -67,14 +67,17 @@ const voicelines = [
   {
     speaker: "Durin on Albedo",
     text: "Albedo has shared so many of his experiences with me regarding becoming truly human... Family is the only thing that a human can't choose. I know my family is complicated and highly unusual, but with Albedo as my brother, I'm filled with a sense of peace and belonging.",
+    source: "In-game voice-over · 'About the Family'",
   },
   {
     speaker: "Varka on Durin",
     text: "When I first got reports about Durin's resurgence, my heart skipped a beat. I was about to send a crack team back home to defend Mondstadt... What was once one of the greatest threats to Mondstadt is now one of our most reliable allies. Fate sure is an unpredictable force.",
+    source: "Official letter from the Grand Master · Version 6.2",
   },
   {
     speaker: "Nicole on Durin",
     text: "I've been Anya's fan since the beginning. I cannot wait to see how this final, ever-evolving masterpiece of hers is going to unfold — and I will protect it at all costs.",
+    source: "Official story teaser · 'What Still Lies Unwritten'",
   },
 ];
 ---
@@ -144,6 +147,7 @@ const voicelines = [
           <div class="border-l-2 border-ember-700/50 pl-4">
             <p class="text-sm font-semibold text-ember-400">{v.speaker}</p>
             <p class="mt-1 text-sm leading-relaxed text-stone-400">{v.text}</p>
+            <p class="mt-1 text-xs text-stone-600">— {v.source}</p>
           </div>
         ))}
       </div>

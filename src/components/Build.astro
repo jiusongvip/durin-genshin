@@ -142,7 +142,7 @@ const teams = [
     name: "Geo (White)",
     tag: "Premium",
     members: "Durin + Navia / Itto + Albedo + Gorou",
-    why: "Pyro Crystallize triggers his White Flame shred, giving a rare RES debuff to Geo carries. Navia especially benefits from the off-field Pyro and reaction uptime.",
+    why: "Pyro Crystallize triggers his White Flame shred, a rare RES debuff for Geo carries like Navia.",
   },
   {
     name: "On-field Vaporize (Dark)",
@@ -154,7 +154,7 @@ const teams = [
     name: "Off-field Vaporize (Dark)",
     tag: "Premium",
     members: "Durin + Arlecchino / Hu Tao + Furina + Mona",
-    why: "Durin stays off-field while his burst Vaporizes, buffed by Furina and Mona's Omen. Mona specifically extends the value of his Dark Form burst.",
+    why: "Durin stays off-field while his burst Vaporizes, buffed by Furina and Mona's Omen, which extends his Dark Form burst value.",
   },
   {
     name: "Melt (Dark)",
@@ -195,7 +195,7 @@ const skills = [
   {
     name: "Normal Attack: Radiant Wingslash",
     tag: "Low priority",
-    desc: "Performs up to four consecutive sword strikes — 45.7% / 41% / 29.2%+29.2% / 71.2% at Lv.1. Charged Attack deals 113.4% for 20 Stamina, and Plunge DMG is 63.9% (128% low / 160% high). Durin spends most of his field time on Skill and Burst, so this is leveled last.",
+    desc: "Up to four sword strikes — 45.7% / 41% / 29.2%+29.2% / 71.2% at Lv.1; Charged 113.4% for 20 Stamina; Plunge 63.9% (128% low / 160% high). Durin's field time goes to Skill and Burst, so level this last.",
     priority: "Level last",
   },
   {
@@ -223,13 +223,13 @@ const constellations = [
     c: "C0",
     verdict: "Usable",
     uplift: "100% baseline",
-    note: "Fully functional at C0 in both forms. The White Flame form shreds RES and applies off-field Pyro; the Dark Decay form is a viable Vaporize and Melt carry. You do not need constellations to make him work.",
+    note: "Fully functional in both forms: White Flame shreds RES off-field, Dark Decay is a viable Vaporize and Melt carry. Constellations are not required.",
   },
   {
     c: "C1 · Adamah's Redemption",
     verdict: "Best value",
     uplift: "+24% / +13% team",
-    note: "The constellation to aim for. After his Burst, the White form grants teammates 20 stacks of Cycle of Enlightenment (each hit consumes one for +60% of his ATK), and the Dark form grants Durin 20 stacks (+150% of his ATK per Burst hit). It buffs both his support and carry sides at once.",
+    note: "The constellation to aim for. After his Burst, the White form grants teammates 20 stacks of Cycle of Enlightenment (each hit consumes one for +60% of his ATK), and the Dark form grants Durin 20 stacks (+150% of his ATK per Burst hit) — buffing both his support and carry sides.",
   },
   {
     c: "C2 · Unground Visions",
@@ -259,7 +259,7 @@ const constellations = [
     c: "C6 · Dual Birth",
     verdict: "Capstone",
     uplift: "+214% / +125% team",
-    note: "Burst ignores 30% DEF. The White Flame burst and Dragon of White Flame also reduce enemy DEF by 30% for 6s, and the Dark Decay burst and Dragon of Dark Decay ignore an extra 40% DEF. A major vertical-investment spike that cements him as a carry.",
+    note: "Burst ignores 30% DEF. The White Flame burst also reduces enemy DEF by 30% for 6s, and the Dark Decay burst ignores an extra 40% DEF — a vertical-investment spike that cements him as a carry.",
   },
 ];
 
@@ -406,7 +406,12 @@ const passives = [
       </table>
     </div>
     <p class="mt-3 text-xs leading-relaxed text-stone-500">
-      Community theorycrafting estimates (KQM). A crowned Skill refunds 30 Energy per state
+      Community theorycrafting estimates from
+      <a
+        href="https://keqingmains.com/durin-quickguide/"
+        target="_blank"
+        rel="noopener"
+        class="underline decoration-stone-700 underline-offset-2 hover:text-stone-300">KQM's Durin quickguide</a>. A crowned Skill refunds 30 Energy per state
       entry, so a second Skill cast per rotation removes the ER need entirely. Ranges depend on
       rotation length and Favonius support.
     </p>
@@ -454,7 +459,12 @@ const passives = [
       </div>
     </div>
     <p class="mt-3 text-xs leading-relaxed text-stone-500">
-      Source: Prydwen.gg Durin usage statistics (Enka sample).
+      Source:
+      <a
+        href="https://www.prydwen.gg/genshin-impact/characters/durin"
+        target="_blank"
+        rel="noopener"
+        class="underline decoration-stone-700 underline-offset-2 hover:text-stone-300">Prydwen.gg Durin usage statistics</a> (Enka sample).
     </p>
 
     <h3 class="mt-14 text-xl font-bold tracking-tight text-stone-50">Best Teams</h3>
@@ -552,7 +562,12 @@ const passives = [
     </div>
     <p class="mt-4 text-xs leading-relaxed text-stone-500">
       Uplift figures are Durin DMG / team DMG relative to a C0 baseline on a Lohen premium
-      team, from community simulations (Prydwen.gg). Varka-team values differ slightly; C2 and
+      team, from
+      <a
+        href="https://www.prydwen.gg/genshin-impact/characters/durin"
+        target="_blank"
+        rel="noopener"
+        class="underline decoration-stone-700 underline-offset-2 hover:text-stone-300">Prydwen.gg constellation simulations</a>. Varka-team values differ slightly; C2 and
       C6 remain the largest jumps.
     </p>
 
@@ -563,7 +578,12 @@ const passives = [
         granting Cycle of Enlightenment stacks that buff both his support and carry sides. C2 is
         the next stop for Pyro-reaction teams. C4 and C6 are vertical-investment spikes for
         dedicated mains. If you already own a 5-star CRIT sword, C1 generally beats an R1
-        Athame Artis for team DPS (KQM).
+        Athame Artis for team DPS per
+        <a
+          href="https://keqingmains.com/durin-quickguide/"
+          target="_blank"
+          rel="noopener"
+          class="underline decoration-stone-700 underline-offset-2 hover:text-stone-300">KQM</a>.
       </p>
     </div>
   </div>
