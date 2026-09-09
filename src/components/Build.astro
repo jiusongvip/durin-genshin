@@ -5,40 +5,40 @@ const weapons = {
   signature: {
     name: "Athame Artis",
     stat: "608 base ATK · 33.1% Crit Rate",
-    why: "His signature sword and clear best-in-slot. Boosts Elemental Burst Crit DMG by 16%; burst hits grant ATK +20% for himself and +16% to nearby teammates for 3s, rising 75% further with Hexerei: Secret Rite active. Feeds both forms.",
+    why: "Signature sword and clear BiS: Burst Crit DMG +16%; burst hits grant ATK +20% (+16% to teammates) for 3s, rising 75% with Hexerei: Secret Rite.",
   },
   fiveStar: [
     {
       name: "Freedom-Sworn",
       stat: "608 base ATK · 198 EM",
-      why: "The best non-signature option. Its Elemental Mastery plus the team-wide ATK and Normal/Charged/Plunging DMG buff make it ideal for reaction and Burgeon teams.",
+      why: "Best non-signature: EM plus team-wide ATK and Normal/Charged/Plunging DMG buff — ideal for reaction and Burgeon teams.",
     },
     {
       name: "Primordial Jade Cutter",
       stat: "542 base ATK · 44.1% Crit Rate",
-      why: "A dependable stat stick: 44.1% Crit Rate makes gearing simple, and the HP-based ATK buff gives a solid damage floor in both forms.",
+      why: "Reliable stat stick: 44.1% Crit Rate simplifies gearing; HP-based ATK buff gives a solid damage floor.",
     },
     {
       name: "Mistsplitter Reforged",
       stat: "674 base ATK · 44.1% Crit DMG",
-      why: "A damage-oriented alternative: Crit DMG and Elemental DMG bonus push burst and skill damage higher, but needs more Crit Rate from artifacts. Best for Dark Decay Vaporize and Melt.",
+      why: "Damage-oriented: Crit DMG and Elemental DMG bonus raise burst and skill damage, but needs more Crit Rate from artifacts. Best for Dark Decay.",
     },
   ],
   f2p: [
     {
       name: "Wolf-Fang",
       stat: "510 base ATK · 27.6% Crit Rate",
-      why: "The best 4-star pick (Battle Pass): Crit Rate plus stacking skill-and-burst DMG — exactly the two abilities Durin uses.",
+      why: "Best 4-star (Battle Pass): Crit Rate plus stacking skill-and-burst DMG — exactly the two abilities Durin uses.",
     },
     {
       name: "Lion's Roar",
       stat: "510 base ATK · 41.3% ATK",
-      why: "The best free-to-play option: 20% DMG bonus against Pyro- or Electro-affected enemies lines up with his Overload and Burning teams.",
+      why: "Best F2P option: 20% DMG bonus vs Pyro- or Electro-affected enemies lines up with his Overload and Burning teams.",
     },
     {
       name: "Amenoma Kageuchi",
       stat: "454 base ATK · 55.1% ATK",
-      why: "A craftable fallback: its ATK stat and passive Energy refund keep his Burst available without building ER.",
+      why: "Craftable fallback: passive Energy refund keeps his Burst available without building ER.",
     },
   ],
 };
@@ -47,12 +47,12 @@ const artifacts = [
   {
     name: "A Day Carved From Rising Winds (4pc)",
     icon: "/official/artifacts/art-risingwinds.webp",
-    why: "His best-in-slot set (Version 6.3). 2pc: 18% ATK. 4pc: after any attack hits, ATK +25% for 6s, upgrading to an extra 20% CRIT Rate after completing Witch's Homework. Durin triggers and holds it effortlessly from off-field.",
+    why: "His BiS set (Version 6.3). 2pc: 18% ATK. 4pc: on any hit, ATK +25% for 6s, upgrading to +20% CRIT Rate after Witch's Homework. Holds it effortlessly off-field.",
   },
   {
     name: "Noblesse Oblige (4pc)",
     icon: "/official/artifacts/art-noblesse.webp",
-    why: "The classic support alternative: 20% Burst DMG, and the 4pc grants the whole team 20% ATK after his burst. Best when nobody else holds it.",
+      why: "Classic support alternative: 20% Burst DMG; 4pc grants the team 20% ATK after his burst. Best when nobody else holds it.",
   },
   {
     name: "Emblem of Severed Fate (4pc)",
@@ -62,7 +62,7 @@ const artifacts = [
   {
     name: "Instructor (4pc)",
     icon: "/official/artifacts/art-instructor.webp",
-      why: "The best 4-star set for reaction teams: 80 EM, and reactions grant the whole party 120 EM for 8s. A budget pick for Burgeon and Overload.",
+      why: "Best 4-star set for reactions: 80 EM, and reactions grant the party 120 EM for 8s. Budget pick for Burgeon and Overload.",
   },
 ];
 
@@ -112,31 +112,31 @@ const teams = [
     name: "Overload (White)",
     tag: "Premium",
     members: "Durin + Arlecchino / Klee / Razor + Fischl + Chevreuse",
-    why: "The flagship White Form team: his RES shred stacks with Chevreuse's Electro shred, Fischl keeps Overload off-field, and Arlecchino, Klee, or Razor drive it on field.",
+    why: "Flagship White team: his RES shred stacks with Chevreuse's Electro shred, Fischl keeps Overload off-field, Arlecchino/Klee/Razor drive it.",
   },
   {
     name: "Burning (White)",
     tag: "Premium",
     members: "Durin + Kinich + Bennett + Emilie",
-    why: "His persistent off-field Pyro sustains Burning without field time, feeding Kinich and Emilie.",
+    why: "Persistent off-field Pyro sustains Burning without field time, feeding Kinich and Emilie.",
   },
   {
     name: "Anemo carry (White)",
     tag: "Premium",
     members: "Durin + Varka / Wanderer / Xiao + Venti / Bennett + Faruzan",
-    why: "White Flame shred is one of the few ways to reduce enemy Anemo RES, which is why Anemo carries gain the most. Venti can also Swirl Pyro for Viridescent Venerer shred.",
+    why: "One of the few ways to shred enemy Anemo RES — why Anemo carries gain most. Venti can also Swirl Pyro for Viridescent Venerer shred.",
   },
   {
     name: "Mono Pyro (White)",
     tag: "Premium",
     members: "Durin + Varka / Arlecchino + Venti + Bennett",
-    why: "No reactions needed: his RES shred and off-field Pyro boost the carry while Bennett covers ATK and healing.",
+    why: "No reactions needed: RES shred and off-field Pyro boost the carry; Bennett covers ATK and healing.",
   },
   {
     name: "Burgeon (White)",
     tag: "Premium",
     members: "Durin + Neuvillette / Lauma + Albedo + Nahida",
-    why: "His off-field Pyro detonates Dendro cores for Burgeon. Build triple Elemental Mastery here, since transformative reactions scale with EM.",
+    why: "Off-field Pyro detonates Dendro cores for Burgeon — build triple Elemental Mastery, since transformative reactions scale with EM.",
   },
   {
     name: "Geo (White)",
@@ -148,31 +148,31 @@ const teams = [
     name: "On-field Vaporize (Dark)",
     tag: "Premium",
     members: "Durin + Xingqiu + Bennett (C6) + Sucrose",
-    why: "Dark Form turns Durin into a frontloaded Vaporize carry. Bennett's C6 Pyro infusion makes his normal attacks hit Pyro, and Xingqiu keeps Vaporize consistent.",
+    why: "Dark Form turns Durin into a frontloaded Vaporize carry: Bennett's C6 Pyro infusion makes his normals hit Pyro, Xingqiu keeps Vaporize consistent.",
   },
   {
     name: "Off-field Vaporize (Dark)",
     tag: "Premium",
     members: "Durin + Arlecchino / Hu Tao + Furina + Mona",
-    why: "Durin stays off-field while his burst Vaporizes, buffed by Furina and Mona's Omen, which extends his Dark Form burst value.",
+    why: "Durin's burst Vaporizes off-field, buffed by Furina and Mona's Omen — which extends his Dark Form burst value.",
   },
   {
     name: "Melt (Dark)",
     tag: "Premium",
     members: "Durin + Lohen / Mavuika + Citlali + Xilonen",
-    why: "Dark Form's Melt DMG bonus pairs with Citlali's Cryo application for reverse-Melt bursts. Lohen and Mavuika both appreciate his off-field Pyro and shared buffs.",
+    why: "Dark Form's Melt bonus pairs with Citlali's Cryo for reverse-Melt bursts; Lohen and Mavuika also enjoy his off-field Pyro.",
   },
   {
     name: "Overvape (F2P)",
     tag: "F2P",
     members: "Durin + Lan Yan / Sucrose + Fischl + Xingqiu",
-    why: "KQM's budget Overvape core. Lan Yan adds a shield, or Sucrose brings more damage with EM buffs. Fischl and Xingqiu supply Electro and Hydro so Dark Form can Vaporize off-field.",
+    why: "KQM's budget Overvape core: Lan Yan shields (or Sucrose EM-buffs), Fischl + Xingqiu supply Electro/Hydro for off-field Vaporize.",
   },
   {
     name: "Melt Kaeya (F2P)",
     tag: "F2P",
     members: "Durin + Kaeya + Sucrose + Bennett",
-    why: "An accessible Melt team. Durin applies Pyro off-field, Sucrose shreds with Viridescent Venerer, and Kaeya drives forward Melt on field.",
+    why: "Accessible Melt: Durin applies Pyro off-field, Sucrose shreds with Viridescent Venerer, Kaeya drives Melt on field.",
   },
   {
     name: "Burgeon (F2P)",
@@ -201,7 +201,7 @@ const skills = [
   {
     name: "Skill: Binary Form, Convergence and Division",
     tag: "Stance switch + off-field Pyro",
-    desc: "Gains Essential Transmutation for 6s. Pressing Skill again enters Confirmation of Purity (105.6% AoE Pyro); a Normal Attack enters Denial of Darkness (72.2% + 53.2% + 64.6%). Each state lasts 30s, restores 6 Energy, and unlocks a different Burst. Cooldown 12s.",
+    desc: "Gains Essential Transmutation for 6s. Skill again → Confirmation of Purity (105.6% AoE Pyro); Normal Attack → Denial of Darkness (72.2% + 53.2% + 64.6%). Each state lasts 30s, restores 6 Energy, unlocks a different Burst. Cooldown 12s.",
     priority: "Level second",
   },
   {
@@ -266,7 +266,7 @@ const constellations = [
 const passives = [
   {
     name: "A1: Light Manifest of the Divine Calculus",
-    desc: "After his Burst: Dragon of White Flame — when teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize (or deal Pyro/Dendro DMG to a Burning opponent), that enemy's Pyro RES and the matching element's RES drop by 20% for 6s. Dragon of Dark Decay — his Vaporize and Melt DMG each rise by 40%.",
+    desc: "After his Burst: White Flame — when teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize, that enemy's Pyro RES and the matching element's RES drop 20% for 6s. Dark Decay — his Vaporize and Melt DMG each +40%.",
   },
   {
     name: "A4: Chaos Formed Like the Night",
@@ -285,12 +285,12 @@ const passives = [
       Durin Build: Weapons, Artifacts, Teams &amp; Skills
     </h2>
     <p class="mt-4 max-w-3xl text-base leading-relaxed text-stone-400">
-      Durin is a two-form Pyro sword character. His Elemental Skill switches him between the
-      <span class="font-semibold text-ice-300">White Flame</span> state, which shreds Pyro and
-      reaction-element RES for Electro, Dendro, Anemo, and Geo carries, and the
-      <span class="font-semibold text-ember-300">Dark Decay</span> state, which raises his own
-      Vaporize and Melt DMG so he can play as a reaction carry. Build him for ATK and Crit, and
-      he needs little to no Energy Recharge once his Skill is crowned.
+      Durin is a two-form Pyro sword. His Skill switches between the
+      <span class="font-semibold text-ice-300">White Flame</span> state (shreds Pyro and
+      reaction-element RES for Electro, Dendro, Anemo, and Geo carries) and the
+      <span class="font-semibold text-ember-300">Dark Decay</span> state (raises his own
+      Vaporize and Melt DMG for a reaction-carry playstyle). Build ATK and Crit; he needs little
+      to no Energy Recharge once his Skill is crowned.
     </p>
 
     <img
@@ -492,9 +492,8 @@ const passives = [
     <div class="mt-8 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
       <h3 class="text-base font-semibold text-stone-100">Hexerei: Secret Rite</h3>
       <p class="mt-2 text-sm leading-relaxed text-stone-400">
-        Durin reaches his full potential with another Hexerei (witch) member: Hexerei: Secret
-        Rite amplifies his Burst — stronger RES shred in White form, higher Vaporize and Melt
-        bonuses in Dark form. He works without one, but Hexerei teams are strongly preferred.
+        Durin's full potential needs another Hexerei (witch) member: Secret Rite amplifies his
+        Burst — stronger RES shred in White form, higher Vaporize/Melt bonuses in Dark form.
       </p>
       <div class="mt-4 grid gap-3 sm:grid-cols-2">
         {hexeriTeammates.map((h) => (
@@ -528,9 +527,8 @@ const passives = [
 
     <div class="mt-6 rounded-2xl border border-ember-700/40 bg-ember-950/20 p-6">
       <p class="text-sm leading-relaxed text-stone-300">
-        <span class="font-semibold text-stone-100">Talent priority:</span> Elemental Burst first,
-        then Elemental Skill, and Normal Attack last. His Burst is his main damage source in both
-        forms, so it is the highest-value talent to crown.
+        <span class="font-semibold text-stone-100">Talent priority:</span> Burst first, Skill
+        second, Normal Attack last — his Burst is his main damage source in both forms.
       </p>
     </div>
 
@@ -572,12 +570,10 @@ const passives = [
 
     <div class="mt-6 rounded-2xl border border-ember-700/40 bg-ember-950/20 p-6">
       <p class="text-sm leading-relaxed text-stone-300">
-        <span class="font-semibold text-stone-100">Investment guide:</span> Pull him at C0
-        and stop — both forms are fully usable without constellations. C1 is the best-value stop,
-        granting Cycle of Enlightenment stacks that buff both his support and carry sides. C2 is
-        the next stop for Pyro-reaction teams. C4 and C6 are vertical-investment spikes for
-        dedicated mains. If you already own a 5-star CRIT sword, C1 generally beats an R1
-        Athame Artis for team DPS per
+        <span class="font-semibold text-stone-100">Investment guide:</span> C0 is fully usable.
+        C1 is the best-value stop (Cycle of Enlightenment buffs both forms); C2 next for
+        Pyro-reaction teams; C4 and C6 are dedicated-main spikes. With a 5-star CRIT sword
+        already owned, C1 generally beats an R1 Athame Artis per
         <a
           href="https://keqingmains.com/durin-quickguide/"
           target="_blank"
