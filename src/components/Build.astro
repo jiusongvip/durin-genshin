@@ -358,9 +358,9 @@ const passives = [
       <table class="w-full min-w-[32rem] border-collapse text-sm">
         <thead>
           <tr class="text-left">
-            <th class="py-3 pr-4 font-medium text-stone-500">Slot</th>
-            <th class="px-4 py-3 font-medium text-stone-500">Main stat</th>
-            <th class="px-4 py-3 font-medium text-stone-500">Sub-stat priority</th>
+            <th class="py-3 pr-4 font-medium text-stone-400">Slot</th>
+            <th class="px-4 py-3 font-medium text-stone-400">Main stat</th>
+            <th class="px-4 py-3 font-medium text-stone-400">Sub-stat priority</th>
           </tr>
         </thead>
         <tbody>
@@ -379,7 +379,7 @@ const passives = [
     <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
       {goalStats.map((g) => (
         <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-4">
-          <p class="text-xs text-stone-500">{g.k}</p>
+          <p class="text-xs text-stone-400">{g.k}</p>
           <p class="mt-1 font-mono text-lg font-semibold text-ember-400">{g.v}</p>
           <p class="mt-2 text-xs leading-relaxed text-stone-400">{g.note}</p>
         </div>
@@ -391,8 +391,8 @@ const passives = [
       <table class="w-full min-w-[30rem] border-collapse text-sm">
         <thead>
           <tr class="text-left">
-            <th class="py-3 pr-4 font-medium text-stone-500">Team setup</th>
-            <th class="px-4 py-3 font-medium text-stone-500">ER needed</th>
+            <th class="py-3 pr-4 font-medium text-stone-400">Team setup</th>
+            <th class="px-4 py-3 font-medium text-stone-400">ER needed</th>
           </tr>
         </thead>
         <tbody>
@@ -405,7 +405,7 @@ const passives = [
         </tbody>
       </table>
     </div>
-    <p class="mt-3 text-xs leading-relaxed text-stone-500">
+    <p class="mt-3 text-xs leading-relaxed text-stone-400">
       Community theorycrafting estimates from
       <a
         href="https://keqingmains.com/durin-quickguide/"
@@ -425,7 +425,7 @@ const passives = [
     </p>
     <div class="mt-5 grid gap-4 md:grid-cols-3">
       <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
-        <p class="text-xs text-stone-500">Top weapons</p>
+        <p class="text-xs text-stone-400">Top weapons</p>
         <ul class="mt-3 space-y-2">
           {usageStats.weapons.map((w) => (
             <li class="flex items-baseline justify-between gap-3 text-sm">
@@ -436,7 +436,7 @@ const passives = [
         </ul>
       </div>
       <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
-        <p class="text-xs text-stone-500">Top artifact sets</p>
+        <p class="text-xs text-stone-400">Top artifact sets</p>
         <ul class="mt-3 space-y-2">
           {usageStats.sets.map((s) => (
             <li class="flex items-baseline justify-between gap-3 text-sm">
@@ -447,7 +447,7 @@ const passives = [
         </ul>
       </div>
       <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
-        <p class="text-xs text-stone-500">Most common build</p>
+        <p class="text-xs text-stone-400">Most common build</p>
         <ul class="mt-3 space-y-2">
           {usageStats.common.map((c) => (
             <li class="flex items-baseline justify-between gap-3 text-sm">
@@ -458,7 +458,7 @@ const passives = [
         </ul>
       </div>
     </div>
-    <p class="mt-3 text-xs leading-relaxed text-stone-500">
+    <p class="mt-3 text-xs leading-relaxed text-stone-400">
       Source:
       <a
         href="https://www.prydwen.gg/genshin-impact/characters/durin"
@@ -477,13 +477,13 @@ const passives = [
               class={`shrink-0 rounded-full border px-2.5 py-1 text-xs font-medium ${
                 t.tag === "F2P"
                   ? "border-emerald-700/50 bg-emerald-950/30 text-emerald-400"
-                  : "border-stone-700 text-stone-500"
+                  : "border-stone-700 text-stone-400"
               }`}
             >
               {t.tag}
             </span>
           </div>
-          <p class="mt-1 text-xs text-stone-500">{t.members}</p>
+          <p class="mt-1 text-xs text-stone-400">{t.members}</p>
           <p class="mt-3 text-sm leading-relaxed text-stone-400">{t.why}</p>
         </div>
       ))}
@@ -499,7 +499,7 @@ const passives = [
         {hexeriTeammates.map((h) => (
           <div class="rounded-lg border border-stone-800 bg-stone-950/40 p-3">
             <p class="text-sm font-medium text-stone-200">{h.name}</p>
-            <p class="mt-1 text-xs leading-relaxed text-stone-500">{h.note}</p>
+            <p class="mt-1 text-xs leading-relaxed text-stone-400">{h.note}</p>
           </div>
         ))}
       </div>
@@ -552,12 +552,12 @@ const passives = [
               {c.uplift}
             </span>
           </div>
-          <p class="mt-2 text-xs font-medium text-stone-500">{c.verdict}</p>
+          <p class="mt-2 text-xs font-medium text-stone-400">{c.verdict}</p>
           <p class="mt-1 text-sm leading-relaxed text-stone-400">{c.note}</p>
         </div>
       ))}
     </div>
-    <p class="mt-4 text-xs leading-relaxed text-stone-500">
+    <p class="mt-4 text-xs leading-relaxed text-stone-400">
       Uplift figures are Durin DMG / team DMG relative to a C0 baseline on a Lohen premium
       team, from
       <a

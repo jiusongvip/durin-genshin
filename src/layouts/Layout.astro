@@ -176,13 +176,48 @@ const faqSchema =
 
     var bar = document.getElementById("reading-progress");
     var btn = document.getElementById("back-to-top");
-    var onScroll = function () {
+    var nav = document.getElementById("main-nav");
+    var toc = document.getElementById("page-toc");
+    var tocLinks = toc ? Array.prototype.slice.call(toc.querySelectorAll("a")) : [];
+    var navMap = tocLinks.map(function (a) {
+      return document.getElementById(a.getAttribute("href").slice(1));
+    });
+    var spyFn = toc
+      ? function (y) {
+          var probe = y + window.innerHeight * 0.35;
+          var current = null;
+          for (var i = 0; i < navMap.length; i++) {
+            if (tops[i] <= probe) current = tocLinks[i];
+          }
+          tocLinks.forEach(function (a) { a.classList.remove("is-active"); });
+          if (current) current.classList.add("is-active");
+        }
+      : null;
+    var tops = [];
+
+    var rz = null, ticking = false;
+    var cachedDoc = 1;
+    var measure = function () {
       var h = document.documentElement;
-      var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-      if (bar) bar.style.width = Math.min(pct, 100) + "%";
-      if (btn) btn.style.display = window.scrollY > 600 ? "flex" : "none";
+      cachedDoc = Math.max(h.scrollHeight - h.clientHeight, 1);
+      tops = navMap.map(function (sec) { return sec ? sec.offsetTop : -1; });
+    };
+
+    var onScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var y = window.scrollY;
+        if (bar) bar.style.width = Math.min((y / cachedDoc) * 100, 100) + "%";
+        var show = y > 600 ? "flex" : "none";
+        if (btn && btn.style.display !== show) btn.style.display = show;
+        if (nav) nav.classList.toggle("nav-solid", y > 80);
+        if (spyFn) spyFn(y);
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { measure(); onScroll(); }, 150); }, { passive: true });
     if (btn) {
       btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
     }
@@ -200,13 +235,6 @@ const faqSchema =
       observer.observe(el);
     });
 
-    var nav = document.getElementById("main-nav");
-    if (nav) {
-      var onNavScroll = function () { nav.classList.toggle("nav-solid", window.scrollY > 80); };
-      onNavScroll();
-      window.addEventListener("scroll", onNavScroll, { passive: true });
-    }
-
     var menuBtn = document.getElementById("mobile-menu-btn");
     var mobileMenu = document.getElementById("mobile-menu");
     if (menuBtn && mobileMenu) {
@@ -219,23 +247,7 @@ const faqSchema =
       });
     }
 
-    var toc = document.getElementById("page-toc");
-    if (toc) {
-      var tocLinks = Array.prototype.slice.call(toc.querySelectorAll("a"));
-      var map = tocLinks.map(function (a) {
-        return document.getElementById(a.getAttribute("href").slice(1));
-      });
-      var spy = function () {
-        var current = null;
-        var probe = window.scrollY + window.innerHeight * 0.35;
-        map.forEach(function (sec, i) {
-          if (sec && sec.offsetTop <= probe) current = tocLinks[i];
-        });
-        tocLinks.forEach(function (a) { a.classList.remove("is-active"); });
-        if (current) current.classList.add("is-active");
-      };
-      window.addEventListener("scroll", spy, { passive: true });
-      spy();
-    }
+    measure();
+    onScroll();
   })();
 </script>

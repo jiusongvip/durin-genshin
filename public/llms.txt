@@ -1,6 +1,16 @@
 # Durin Genshin Guide
 
+> Independent, ad-free single-page reference for Durin in Genshin Impact — build, lore, materials, constellations, and pull value.
+
 Durin Genshin Guide is an independent, single-page reference for the character Durin in Genshin Impact (5-star Pyro sword user, released Version 6.2, December 3 2025). The page covers his identity, two battle forms (White Flame support and Dark Decay Vaporize/Melt carry), best build, constellations, lore across three forms (dragon → Mini Durin → playable human), ascension materials, and pull value.
+
+## Pages
+
+- [Durin Guide (home)](https://www.durin-genshin.com/): complete character guide — build, teams, lore, materials, FAQ.
+- [About](https://www.durin-genshin.com/about/): who maintains this guide and how content is verified.
+- [Contact](https://www.durin-genshin.com/contact/): corrections and feedback.
+- [Privacy](https://www.durin-genshin.com/privacy/): no cookies, no tracking, no personal data collection.
+- [Terms](https://www.durin-genshin.com/terms/): terms of use and content disclaimer.
 
 ## Key facts
 
@@ -22,16 +32,16 @@ Durin Genshin Guide is an independent, single-page reference for the character D
 - Pros, cons and rotations for both forms.
 - Lore — full timeline of the three Durins and key relationships.
 - Materials — ascension and talent totals, farming routes and common mistakes.
-- FAQ — 35 questions and answers.
+- FAQ — 20 questions and answers.
 - Trust — editorial team, sources and update notes.
 
 ## Sources
 
-- Official character page (Durin, Mondstadt): https://genshin.hoyoverse.com/en/character/mondstadt?char=21
-- Official Character Trailer "Durin: A Story Born for This": https://www.youtube.com/watch?v=MOkyO-PYAGY
-- Official Character Teaser "Durin: A Family Letter": https://www.youtube.com/watch?v=OTnW8G2VsyM
-- Official Character Anecdote "Every Stroke of the Story": https://www.youtube.com/watch?v=aE5MofefW5c
-- r/DurinMains community: https://www.reddit.com/r/DurinMains/
-- KQM Durin Quick Guide: https://keqingmains.com/durin-quickguide/
-- Prydwen.gg usage statistics: https://www.prydwen.gg/genshin-impact/characters/durin
-- Community wiki: https://genshin-impact.fandom.com/wiki/Durin
+- [Official character page (Durin, Mondstadt)](https://genshin.hoyoverse.com/en/character/mondstadt?char=21): HoYoverse's official Durin character profile.
+- [Official Character Trailer "Durin: A Story Born for This"](https://www.youtube.com/watch?v=MOkyO-PYAGY): the 6.2 trailer introducing his playable design.
+- [Official Character Teaser "Durin: A Family Letter"](https://www.youtube.com/watch?v=OTnW8G2VsyM): his Mondstadt life with Albedo and Klee.
+- [Official Character Anecdote "Every Stroke of the Story"](https://www.youtube.com/watch?v=aE5MofefW5c): official anecdote following his story after rerun.
+- [r/DurinMains](https://www.reddit.com/r/DurinMains/): community testing and usage discussion.
+- [KQM Durin Quick Guide](https://keqingmains.com/durin-quickguide/): theorycrafting and team math.
+- [Prydwen.gg Durin page](https://www.prydwen.gg/genshin-impact/characters/durin): usage statistics and tier data.
+- [Durin Fandom wiki](https://genshin-impact.fandom.com/wiki/Durin): community wiki reference.
