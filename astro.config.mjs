@@ -6,6 +6,9 @@ export default defineConfig({
   site: "https://www.durin-genshin.com",
   trailingSlash: "always",
   integrations: [sitemap()],
+  build: {
+    inlineStylesheets: "always",
+  },
   vite: {
     plugins: [tailwindcss()],
   },

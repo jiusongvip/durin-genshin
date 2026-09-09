@@ -247,7 +247,9 @@ const faqSchema =
       });
     }
 
-    measure();
-    onScroll();
+    requestAnimationFrame(function () {
+      measure();
+      onScroll();
+    });
   })();
 </script>
