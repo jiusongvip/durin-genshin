@@ -7,9 +7,9 @@ const stages = [
     title: "The Dragon of Dragonspine",
     body: [
       "The original Durin was a shadow dragon created by Rhinedottir, the alchemist known as Gold, in Khaenri'ah before the Cataclysm — holding the title of Humus, second only to Albedo the Chalk among her creations.",
-      "Gentle at heart but perceiving the world differently, he caused destruction without meaning to. When he flew to Mondstadt during the Cataclysm he wanted to befriend its people and Dvalin, yet his presence brought ruin alongside the Abyss creatures.",
+      "Gentle at heart, he caused destruction without meaning to. During the Cataclysm he flew to Mondstadt wanting to befriend its people and Dvalin, yet his presence brought ruin alongside the Abyss creatures.",
       "Barbatos and Dvalin fought him down, and his body crashed into Dragonspine. His toxic blood seeped into the mountain, forming Wyrmrest Valley, where his heart still beats. Even in death he held no grudge, wishing they could have met under kinder circumstances.",
-      "His remains resurfaced in Version 1.2's The Chalk Prince and the Dragon (the cursed sword Festering Desire was coated in his dust) and in Version 2.3's Shadows Amidst Snowstorms, where his still-beating heart drove the plot.",
+      "His remains resurfaced in Version 1.2's The Chalk Prince and the Dragon (Festering Desire was coated in his dust) and Version 2.3's Shadows Amidst Snowstorms, where his still-beating heart drove the plot.",
     ],
     relations: ["Created by Rhinedottir (Gold)", "Defeated by Barbatos and Dvalin", "Brother to Albedo"],
   },
@@ -27,9 +27,9 @@ const stages = [
     era: "Version 5.6 onward",
     title: "The Human Durin",
     body: [
-      "After Simulanka, Albedo found the original's heart beating faster in Dragonspine — a resurrection was coming. To prevent a second disaster, he transmuted the remains into a human body from Durin's blood, immortal Mare Javari flesh, and a Rhinedottir embryo.",
+      "After Simulanka, Albedo found the original's heart beating faster in Dragonspine — a resurrection was coming. To prevent a second disaster, he transmuted the remains into a human body.",
       "Merged with Mini Durin, the two became one being: a human boy with dragon horns and wings, now a Mondstadt resident.",
-      "He is learning to live among people — befriending Klee, occasionally scolded by Acting Grand Master Jean. In The Solution of Fate, the Traveler, Albedo, and the Wanderer help him reject his original's fate when abyssal energy threatens. As of Version 6.2 he is a playable 5-star Pyro sword, with Story Quest Draco Rubedo Act 1: The Magic Known as Storytelling.",
+      "He is learning to live among people — befriending Klee, occasionally scolded by Acting Grand Master Jean. In The Solution of Fate, the Traveler, Albedo, and the Wanderer help him reject his original's fate. As of Version 6.2 he is a playable 5-star Pyro sword, with Story Quest Draco Rubedo Act 1: The Magic Known as Storytelling.",
     ],
     relations: ["Brother to Albedo", "Friend to Klee", "Playable since 6.2"],
   },
@@ -56,17 +56,17 @@ const officialVideos = [
 const voicelines = [
   {
     speaker: "Durin on Albedo",
-    text: "Albedo has shared so many of his experiences with me regarding becoming truly human... Family is the only thing that a human can't choose. I know my family is complicated and highly unusual, but with Albedo as my brother, I'm filled with a sense of peace and belonging.",
+    text: "Albedo has shared so many of his experiences with me regarding becoming truly human... with Albedo as my brother, I'm filled with a sense of peace and belonging.",
     source: "In-game voice-over · 'About the Family'",
   },
   {
     speaker: "Varka on Durin",
-    text: "When I first got reports about Durin's resurgence, my heart skipped a beat. I was about to send a crack team back home to defend Mondstadt... What was once one of the greatest threats to Mondstadt is now one of our most reliable allies. Fate sure is an unpredictable force.",
+    text: "What was once one of the greatest threats to Mondstadt is now one of our most reliable allies. Fate sure is an unpredictable force.",
     source: "Official letter from the Grand Master · Version 6.2",
   },
   {
     speaker: "Nicole on Durin",
-    text: "I've been Anya's fan since the beginning. I cannot wait to see how this final, ever-evolving masterpiece of hers is going to unfold — and I will protect it at all costs.",
+    text: "I cannot wait to see how this final, ever-evolving masterpiece of hers is going to unfold — and I will protect it at all costs.",
     source: "Official story teaser · 'What Still Lies Unwritten'",
   },
 ];
@@ -135,8 +135,7 @@ const voicelines = [
     <div class="mt-8 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
       <h3 class="text-base font-semibold text-stone-100">Watch the official story</h3>
       <p class="mt-2 text-sm leading-relaxed text-stone-400">
-        Official media from the Genshin Impact channel — the same story told on-screen. Source:
-        HoYoverse official YouTube.
+        Official media from HoYoverse's Genshin Impact channel — the same story told on-screen.
       </p>
       <ul class="mt-4 space-y-3">
         {officialVideos.map((v) => (
