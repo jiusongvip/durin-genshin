@@ -151,6 +151,8 @@ const faqSchema =
 
     <Nav />
 
+    <noscript><style>.reveal { opacity: 1; transform: none; } .split-char { opacity: 1; transform: none; }</style></noscript>
+
     <slot />
 
     <Footer />
@@ -190,9 +192,12 @@ const faqSchema =
           if (entry.isIntersecting) entry.target.classList.add("reveal-in");
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: "0px 0px -5% 0px" }
     );
-    document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      if (!("IntersectionObserver" in window)) { el.classList.add("reveal-in"); return; }
+      observer.observe(el);
+    });
 
     var nav = document.getElementById("main-nav");
     if (nav) {
