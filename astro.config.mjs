@@ -7,7 +7,7 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [sitemap()],
   build: {
-    inlineStylesheets: "always",
+    inlineStylesheets: "auto",
   },
   vite: {
     plugins: [tailwindcss()],

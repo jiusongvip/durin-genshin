@@ -13,9 +13,10 @@ interface Props {
   canonical: string;
   faqs?: { q: string; a: string }[];
   noindex?: boolean;
+  heroImage?: string;
 }
 
-const { title, description, canonical, faqs = [], noindex = false } = Astro.props;
+const { title, description, canonical, faqs = [], noindex = false, heroImage = "" } = Astro.props;
 const site = "https://www.durin-genshin.com";
 const ogImage = `${site}/og.jpg`;
 
@@ -104,6 +105,7 @@ const faqSchema =
     <meta name="author" content="Durin Genshin Guide Editorial Team" />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
+    {heroImage && <link rel="preload" as="image" href={heroImage} fetchpriority="high" />}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Durin Genshin Guide" />
