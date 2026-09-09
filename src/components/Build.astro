@@ -5,40 +5,40 @@ const weapons = {
   signature: {
     name: "Athame Artis",
     stat: "608 base ATK · 33.1% Crit Rate",
-    why: "His signature sword and the clear best-in-slot. It boosts Elemental Burst Crit DMG by 16%, and when the burst hits it grants the Blade of the Daylight Hours effect: ATK +20% and nearby teammates' ATK +16% for 3s. With Hexerei: Secret Rite effects active, that bonus rises by a further 75%. It feeds both his support and carry forms.",
+    why: "His signature sword and clear best-in-slot. Boosts Elemental Burst Crit DMG by 16%; burst hits grant ATK +20% for himself and +16% to nearby teammates for 3s, rising 75% further with Hexerei: Secret Rite active. Feeds both forms.",
   },
   fiveStar: [
     {
       name: "Freedom-Sworn",
       stat: "608 base ATK · 198 EM",
-      why: "The best non-signature option. Its Elemental Mastery and the team-wide ATK and Normal/Charged/Plunging DMG buff from its Sigil of Rebellion passive make it ideal for reaction teams and Burgeon builds.",
+      why: "The best non-signature option. Its Elemental Mastery plus the team-wide ATK and Normal/Charged/Plunging DMG buff make it ideal for reaction and Burgeon teams.",
     },
     {
       name: "Primordial Jade Cutter",
       stat: "542 base ATK · 44.1% Crit Rate",
-      why: "A dependable stat stick. Its high 44.1% Crit Rate makes gearing simple, and the HP-based ATK buff gives a solid damage floor for both forms.",
+      why: "A dependable stat stick: 44.1% Crit Rate makes gearing simple, and the HP-based ATK buff gives a solid damage floor in both forms.",
     },
     {
       name: "Mistsplitter Reforged",
       stat: "674 base ATK · 44.1% Crit DMG",
-      why: "A strong damage-oriented alternative. Its Crit DMG and Elemental DMG bonus push his burst and skill damage higher, at the cost of needing more Crit Rate from artifacts. Best for his Dark Decay Vaporize and Melt form.",
+      why: "A damage-oriented alternative: Crit DMG and Elemental DMG bonus push burst and skill damage higher, but needs more Crit Rate from artifacts. Best for Dark Decay Vaporize and Melt.",
     },
   ],
   f2p: [
     {
       name: "Wolf-Fang",
       stat: "510 base ATK · 27.6% Crit Rate",
-      why: "The best 4-star pick, from the Battle Pass. It provides Crit Rate and stacking skill-and-burst DMG, which matches exactly the two abilities Durin actually uses.",
+      why: "The best 4-star pick (Battle Pass): Crit Rate plus stacking skill-and-burst DMG — exactly the two abilities Durin uses.",
     },
     {
       name: "Lion's Roar",
       stat: "510 base ATK · 41.3% ATK",
-      why: "The best free-to-play option. Its 20% DMG bonus against Pyro- or Electro-affected enemies lines up perfectly with his Overload and Burning teams.",
+      why: "The best free-to-play option: 20% DMG bonus against Pyro- or Electro-affected enemies lines up with his Overload and Burning teams.",
     },
     {
       name: "Amenoma Kageuchi",
       stat: "454 base ATK · 55.1% ATK",
-      why: "A craftable F2P fallback. Its ATK stat and the Energy refund from its passive help keep his Burst available without building much Energy Recharge.",
+      why: "A craftable fallback: its ATK stat and passive Energy refund keep his Burst available without building ER.",
     },
   ],
 };
@@ -47,22 +47,22 @@ const artifacts = [
   {
     name: "A Day Carved From Rising Winds (4pc)",
     icon: "/official/artifacts/art-risingwinds.webp",
-    why: "His best-in-slot set, released in Version 6.3. Two pieces give 18% ATK. The four-piece effect grants the Blessing of Pastoral Winds for 6s after any attack hits: ATK +25%, and after completing Witch's Homework it upgrades to Resolve of Pastoral Winds for an extra 20% CRIT Rate. Durin triggers it effortlessly and keeps the buff from off-field.",
+    why: "His best-in-slot set (Version 6.3). 2pc: 18% ATK. 4pc: after any attack hits, ATK +25% for 6s, upgrading to an extra 20% CRIT Rate after completing Witch's Homework. Durin triggers and holds it effortlessly from off-field.",
   },
   {
     name: "Noblesse Oblige (4pc)",
     icon: "/official/artifacts/art-noblesse.webp",
-    why: "The classic support alternative. Two pieces give 20% Burst DMG, and the four-piece effect grants the whole team 20% ATK after his burst. Best when no one else on the team is already holding it.",
+    why: "The classic support alternative: 20% Burst DMG, and the 4pc grants the whole team 20% ATK after his burst. Best when nobody else holds it.",
   },
   {
     name: "Emblem of Severed Fate (4pc)",
     icon: "/official/artifacts/art-emblem.webp",
-    why: "A burst-damage option. It adds 20% Energy Recharge and converts that ER into Burst DMG (up to 75%). Useful if you want his burst missiles to hit harder.",
+    why: "A burst-damage option: 20% Energy Recharge, converted into Burst DMG (up to 75%).",
   },
   {
     name: "Instructor (4pc)",
     icon: "/official/artifacts/art-instructor.webp",
-    why: "The best 4-star set for reaction teams. It grants 80 Elemental Mastery and gives the whole party 120 EM for 8s after triggering a reaction. A budget pick for Burgeon and Overload teams.",
+      why: "The best 4-star set for reaction teams: 80 EM, and reactions grant the whole party 120 EM for 8s. A budget pick for Burgeon and Overload.",
   },
 ];
 
@@ -112,25 +112,25 @@ const teams = [
     name: "Overload (White)",
     tag: "Premium",
     members: "Durin + Arlecchino / Klee / Razor + Fischl + Chevreuse",
-    why: "The flagship White Form team. Durin's RES shred stacks with Chevreuse's Electro shred, and Fischl keeps Overload triggering off-field. Arlecchino, Klee, or Razor drive the reactions on field.",
+    why: "The flagship White Form team: his RES shred stacks with Chevreuse's Electro shred, Fischl keeps Overload off-field, and Arlecchino, Klee, or Razor drive it on field.",
   },
   {
     name: "Burning (White)",
     tag: "Premium",
     members: "Durin + Kinich + Bennett + Emilie",
-    why: "His persistent off-field Pyro sustains Burning without field time, feeding Kinich and Emilie. The reaction RES shred boosts the whole rotation.",
+    why: "His persistent off-field Pyro sustains Burning without field time, feeding Kinich and Emilie.",
   },
   {
     name: "Anemo carry (White)",
     tag: "Premium",
     members: "Durin + Varka / Wanderer / Xiao + Venti / Bennett + Faruzan",
-    why: "His White Flame RES shred is one of the few ways to reduce enemy Anemo resistance, which is why Anemo carries gain the most. Venti can also Swirl Pyro for Viridescent Venerer shred.",
+    why: "White Flame shred is one of the few ways to reduce enemy Anemo RES, which is why Anemo carries gain the most. Venti can also Swirl Pyro for Viridescent Venerer shred.",
   },
   {
     name: "Mono Pyro (White)",
     tag: "Premium",
     members: "Durin + Varka / Arlecchino + Venti + Bennett",
-    why: "A no-reaction team where his RES shred and off-field Pyro still boost the on-field Pyro carry, with Bennett covering ATK and healing.",
+    why: "No reactions needed: his RES shred and off-field Pyro boost the carry while Bennett covers ATK and healing.",
   },
   {
     name: "Burgeon (White)",
@@ -178,17 +178,17 @@ const teams = [
     name: "Burgeon (F2P)",
     tag: "F2P",
     members: "Durin + Barbara + Fischl + Dendro Traveler",
-    why: "A no-5-star Burgeon team. Durin's off-field Pyro detonates Dendro cores while Barbara keeps Hydro up on field and heals.",
+    why: "A no-5-star Burgeon team: Durin's off-field Pyro detonates Dendro cores while Barbara keeps Hydro up and heals.",
   },
 ];
 
 const hexeriTeammates = [
-  { name: "Varka", note: "Both are Hexerei members who satisfy each other's buffs; Durin also enables Varka's Pyro infusion." },
-  { name: "Lohen", note: "Durin's off-field damage feeds Lohen's Will to Win, and both amplify each other's Melt damage." },
-  { name: "Mona", note: "Enables the maximum potential of Dark Form with Vaporize buffs and extended Omen duration." },
-  { name: "Nicole", note: "Both work together to buff teammates in Hexerei teams." },
-  { name: "Klee", note: "Pyro Resonance plus Hexerei buffs, serving as cores for Vaporize, Melt, or Overload teams." },
-  { name: "Razor", note: "Another Hexerei member; both can anchor an Overload team when Fischl is unavailable." },
+  { name: "Varka", note: "Hexerei partner who satisfies both buffs; Durin also enables Varka's Pyro infusion." },
+  { name: "Lohen", note: "Durin's off-field damage feeds Lohen's Will to Win; both amplify each other's Melt damage." },
+  { name: "Mona", note: "Unlocks Dark Form's ceiling with Vaporize buffs and extended Omen duration." },
+  { name: "Nicole", note: "General Hexerei partner for team-wide buffs." },
+  { name: "Klee", note: "Pyro Resonance plus Hexerei buffs — a core for Vaporize, Melt, or Overload teams." },
+  { name: "Razor", note: "Hexerei partner who can anchor Overload when Fischl is unavailable." },
 ];
 
 const skills = [
@@ -201,19 +201,19 @@ const skills = [
   {
     name: "Skill: Binary Form, Convergence and Division",
     tag: "Stance switch + off-field Pyro",
-    desc: "Gains Essential Transmutation for 6s. Pressing Skill again enters Confirmation of Purity (105.6% AoE Pyro), while a Normal Attack enters Denial of Darkness (72.2% + 53.2% + 64.6%). Each state lasts 30s, restores 6 Energy, and unlocks a different Burst. Cooldown 12s.",
+    desc: "Gains Essential Transmutation for 6s. Pressing Skill again enters Confirmation of Purity (105.6% AoE Pyro); a Normal Attack enters Denial of Darkness (72.2% + 53.2% + 64.6%). Each state lasts 30s, restores 6 Energy, and unlocks a different Burst. Cooldown 12s.",
     priority: "Level second",
   },
   {
     name: "Burst (White): As the Light Shifts",
     tag: "RES shred + off-field AoE",
-    desc: "Deals 3 hits of AoE Pyro DMG (119% + 96.4% + 111.8%) and summons the Dragon of White Flame (94.6% per periodic hit) for 20s. When teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize, the enemy's Pyro RES and the corresponding reaction element's RES are decreased. Used by default outside a special state.",
+    desc: "3 AoE Pyro hits (119% + 96.4% + 111.8%) plus the Dragon of White Flame (94.6% per periodic hit, 20s). When teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize, enemy Pyro RES and the reaction element's RES drop.",
     priority: "Level first",
   },
   {
     name: "Burst (Dark): As the Stars Smolder",
     tag: "Vaporize / Melt carry",
-    desc: "Deals 3 hits of AoE Pyro DMG (125.4% + 101.8% + 111.8%) and summons the Dragon of Dark Decay (129.8% per periodic hit) for 20s. Durin's Vaporize and Melt DMG each rise, turning him into a reaction carry. Energy Cost 70, Cooldown 18s.",
+    desc: "3 AoE Pyro hits (125.4% + 101.8% + 111.8%) plus the Dragon of Dark Decay (129.8% per periodic hit, 20s). Raises his Vaporize and Melt DMG, turning him into a reaction carry. Energy Cost 70, Cooldown 18s.",
     priority: "Level first",
   },
 ];
@@ -235,25 +235,25 @@ const constellations = [
     c: "C2 · Unground Visions",
     verdict: "Strong",
     uplift: "+49% / +36% team",
-    note: "For 20s after his Burst, when nearby party members trigger Vaporize, Melt, Burning, Overloaded, Pyro Swirl, or Pyro Crystallize, the whole party gains 50% Pyro DMG plus the corresponding elemental DMG for 6s. A large team-wide damage spike for Pyro-reaction teams.",
+    note: "For 20s after his Burst, triggering Vaporize, Melt, Burning, Overloaded, Pyro Swirl, or Pyro Crystallize grants the whole party 50% Pyro DMG plus the matching elemental DMG for 6s — a large spike for Pyro-reaction teams.",
   },
   {
     c: "C3 · Flame Mirror's Revelation",
     verdict: "Burst level",
     uplift: "+69% / +47% team",
-    note: "Raises the level of Principle of Purity: As the Light Shifts by 3, strengthening the White Flame burst and its off-field damage.",
+    note: "Burst level +3, strengthening the White Flame burst and its off-field damage.",
   },
   {
     c: "C4 · Emanare's Source",
     verdict: "Strong",
     uplift: "+103% / +65% team",
-    note: "Burst DMG is increased by 40%, and Cycle of Enlightenment stacks from C1 have a 30% chance not to be consumed. A clean damage boost plus better uptime on his C1 buffs.",
+    note: "Burst DMG +40%, and C1's Cycle of Enlightenment stacks have a 30% chance not to be consumed.",
   },
   {
     c: "C5 · Scouring Flame's Sundering",
     verdict: "Skill level",
     uplift: "+104% / +66% team",
-    note: "Raises the level of Binary Form: Convergence and Division by 3, improving his off-field Pyro damage and the scaling of both stance effects.",
+    note: "Skill level +3, improving off-field Pyro damage and both stance effects.",
   },
   {
     c: "C6 · Dual Birth",
@@ -266,15 +266,15 @@ const constellations = [
 const passives = [
   {
     name: "A1: Light Manifest of the Divine Calculus",
-    desc: "After unleashing his Burst, Durin's power form grants different bonuses. Dragon of White Flame: after teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize, or deal Pyro or Dendro DMG to a Burning opponent, that opponent's Pyro RES and the corresponding element's RES drop by 20% for 6s. Dragon of Dark Decay: his Vaporize and Melt DMG each rise by 40%.",
+    desc: "After his Burst: Dragon of White Flame — when teammates trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize (or deal Pyro/Dendro DMG to a Burning opponent), that enemy's Pyro RES and the matching element's RES drop by 20% for 6s. Dragon of Dark Decay — his Vaporize and Melt DMG each rise by 40%.",
   },
   {
     name: "A4: Chaos Formed Like the Night",
-    desc: "After unleashing his Burst, Durin gains Primordial Fusion of Forms for 20s with 10 stacks. Each periodic hit from the Dragon of White Flame or Dragon of Dark Decay consumes one stack to increase that hit's DMG by 3% for every 100 ATK, up to 75%. Stacks reset on his next Burst.",
+    desc: "After his Burst, gains Primordial Fusion of Forms for 20s with 10 stacks. Each Dragon periodic hit consumes one stack to add 3% DMG per 100 ATK (up to 75%). Stacks reset on his next Burst.",
   },
   {
     name: "Hexerei: Witch's Eve Rite",
-    desc: "After completing Witch's Homework: Of This World, Durin becomes a Hexerei character. With at least two Hexerei characters in the party, the Hexerei: Secret Rite buffs amplify his Burst — stronger RES shred in White form and higher Vaporize/Melt bonuses in Dark form.",
+    desc: "After completing Witch's Homework: Of This World, Durin becomes a Hexerei character. With 2+ Hexerei members in the party, Hexerei: Secret Rite amplifies his Burst — stronger RES shred in White form, higher Vaporize/Melt bonuses in Dark form.",
   },
 ];
 ---
@@ -420,8 +420,8 @@ const passives = [
       What Players Actually Run
     </h3>
     <p class="mt-3 max-w-2xl text-sm leading-relaxed text-stone-400">
-      Real usage data from {usageStats.sample} Enka-linked player profiles (Prydwen.gg, August
-      2026). Guides describe the ceiling; these numbers describe reality.
+      Real usage data from {usageStats.sample} Enka-linked player profiles (August 2026). Guides
+      describe the ceiling; these numbers describe reality.
     </p>
     <div class="mt-5 grid gap-4 md:grid-cols-3">
       <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
@@ -492,10 +492,9 @@ const passives = [
     <div class="mt-8 rounded-2xl border border-stone-800 bg-stone-900/40 p-6">
       <h3 class="text-base font-semibold text-stone-100">Hexerei: Secret Rite</h3>
       <p class="mt-2 text-sm leading-relaxed text-stone-400">
-        Durin reaches his full potential when paired with another Hexerei (witch) member. The
-        Hexerei: Secret Rite buffs amplify his Elemental Burst — stronger RES shred in White
-        form and higher Vaporize and Melt bonuses in Dark form. He still works without one, but
-        he is strongly incentivized to run Hexerei teams.
+        Durin reaches his full potential with another Hexerei (witch) member: Hexerei: Secret
+        Rite amplifies his Burst — stronger RES shred in White form, higher Vaporize and Melt
+        bonuses in Dark form. He works without one, but Hexerei teams are strongly preferred.
       </p>
       <div class="mt-4 grid gap-3 sm:grid-cols-2">
         {hexeriTeammates.map((h) => (

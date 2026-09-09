@@ -51,7 +51,7 @@ const pitfalls = [
   },
   {
     t: "Do not spend Fragile Resin on artifacts before Stygian Onslaught",
-    b: "r/DurinMains tip: the Stygian Onslaught event gives an extra 5-star artifact per 120 Resin spent, and Durin's best set can be farmed there. Saving Fragile Resin for the event window is noticeably more efficient.",
+    b: 'Community tip from <a href="https://www.reddit.com/r/DurinMains/" target="_blank" rel="noopener" class="text-ember-300 underline decoration-stone-700 underline-offset-2">r/DurinMains</a>: the Stygian Onslaught event gives an extra 5-star artifact per 120 Resin spent, and Durin\'s best set can be farmed there. Saving Fragile Resin for the event window is noticeably more efficient.',
   },
 ];
 
@@ -161,7 +161,7 @@ const ascensionLevels = [
         {pitfalls.map((p) => (
           <div class="rounded-xl border border-stone-800 bg-stone-900/30 p-5">
             <p class="font-semibold text-stone-100">{p.t}</p>
-            <p class="mt-2 text-sm leading-relaxed text-stone-400">{p.b}</p>
+            <p class="mt-2 text-sm leading-relaxed text-stone-400"><Fragment set:html={p.b} /></p>
           </div>
         ))}
       </div>
